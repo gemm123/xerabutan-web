@@ -9,20 +9,29 @@
     <link rel="stylesheet" href="resource/css/style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
           <a class="navbar-brand" href="/">
-            <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">
+            <img src="" alt="">
           </a>
-          <div class="d-flex">
-              <div class="menu mt-2">
-                <a href="#" class="text-decoration-none biru-xerabutan fw-bold">Home</a>
-                <a href="#" class="ms-3 text-decoration-none biru-xerabutan fw-bold">Cari Keahlian</a>
-                <a href="#" class="ms-3 text-decoration-none biru-xerabutan fw-bold">Tentang Kami</a>  
-              </div>
-              <div class="btn bg-biru-xerabutan text-wrap ms-3 me-5" style="width: 5em;">
-                <a href="#" class="text-decoration-none text-white fw-bold fs-6 btn-login">Login</a>
-              </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active biru-xerabutan fw-bold menu" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active biru-xerabutan fw-bold menu" aria-current="page" href="/">Cari Keahlian</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active biru-xerabutan fw-bold menu" aria-current="page" href="/">Tentang Kami</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active fw-bold text-white fw-bold fs-6 btn-login bg-biru-xerabutan rounded px-3" aria-current="page" href="/" style="width: 75px;">Login</a>
+              </li>
+            </ul>
           </div>
         </div>
     </nav>
@@ -32,14 +41,14 @@
             <div class="row text-center text-white">
                 <div class="col text-start">
                     <p>
-                        contact@xerabutan.com <br>
-                        0813-9868-9316<br>
-                        Jalan Raya Cibanteng, Kabupaten Bogor.<br>
-                        @xerabutan<br>
+                        <span><a href="mailto:contact@xerabutan.com" target="_blank"><img src="resource/image/gmail.png" alt="" width="20px" class="my-2 me-1"></a></span>contact@xerabutan.com <br>
+                        <span><a href="https://api.whatsapp.com/send/?phone=6281398589316&text&app_absent=0" target="_blank"><img src="resource/image/wa.png" alt="" width="20px" class="my-2 me-1"></a></span>0813-9868-9316<br>
+                        <span><img src="resource/image/alamat.png" alt="" width="20px" class="my-2 me-1"></span>Jalan Raya Cibanteng, Kabupaten Bogor.<br>
+                        <span><a href="https://www.instagram.com/xerabutan/" target="_blank"><img src="resource/image/instagram.png" alt="" width="20px" class="my-2 me-1"></a></span>@xerabutan<br>
                     </p>
                 </div>
-                <div class="col">
-                    <p class="fw-bold fs-1">#Salurkan Keahlianmu</p>
+                <div class="col mt-5">
+                  <p class="fw-bold fs-1">#Salurkan Keahlianmu</p>
                 </div>
             </div>
         </div>

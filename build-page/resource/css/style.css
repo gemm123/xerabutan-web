@@ -1,0 +1,23 @@
+.biru-xerabutan {
+    color: #16205B !important;
+}
+
+.pink-xerabutan {
+    color: #F1246F !important;
+}
+
+.bg-biru-xerabutan {
+    background-color: #16205B !important;
+}
+
+.bg-pink-xerabutan {
+    background-color: #F1246F !important;
+}
+
+.btn-login:hover {
+    background-color: #F1246F !important;
+}
+
+.menu:hover {
+    color:  #F1246F !important;
+}
