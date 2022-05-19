@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\BotmanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/carikeahlian', function () {
+    return view('carikeahlian');
+});
+
+
+Route::match(['get', 'post'], '/botman', [BotmanController::class, 'handle']);
+Route::get('/botman/tinker',  [BotmanController::class, 'tinker']);
