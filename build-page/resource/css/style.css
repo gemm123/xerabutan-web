@@ -2,22 +2,36 @@
     color: #16205B !important;
 }
 
-.pink-xerabutan {
-    color: #F1246F !important;
-}
-
 .bg-biru-xerabutan {
     background-color: #16205B !important;
+}
+
+.border-biru-xerabutan {
+    border-color: #16205B !important;
+}
+
+.pink-xerabutan {
+    color: #F1246F !important;
 }
 
 .bg-pink-xerabutan {
     background-color: #F1246F !important;
 }
 
-.btn-login:hover {
+.btn-bg-pink-hover:hover {
     background-color: #F1246F !important;
+}
+
+.border-pink-hover:hover {
+    border-color: #F1246F !important;
 }
 
 .menu:hover {
     color:  #F1246F !important;
+}
+
+hr {
+    border: 1px solid gray;
+    margin: 0 150px;
+    border-radius: 10px;
 }
