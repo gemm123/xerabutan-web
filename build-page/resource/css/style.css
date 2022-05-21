@@ -10,6 +10,10 @@
     border-color: #16205B !important;
 }
 
+.border-pink-xerabutan {
+    border-color: #F1246F !important;
+}
+
 .pink-xerabutan {
     color: #F1246F !important;
 }
@@ -32,6 +36,10 @@
 
 hr {
     border: 1px solid gray;
-    margin: 0 150px;
+    margin: 0 100px;
     border-radius: 10px;
+}
+
+.alert {
+    background-color: rgba(255, 0, 0, 0.2);
 }
