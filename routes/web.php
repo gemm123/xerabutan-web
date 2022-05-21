@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\BotmanController;
 use App\Http\Controllers\PostController;
+use App\Models\Category;
 use App\Models\Post;
 
 /*
@@ -35,7 +36,20 @@ Route::get('/blog', function () {
 });
 
 Route::get('/posts', [PostController::class, 'index']);
-Route::get('/posts/{post}', [PostController::class, 'show']);
+Route::get('/posts/{post:slug}', [PostController::class, 'show']);
+Route::get('/categories/{category:slug}', function(Category $category){
+    return view('category', [
+        'title' => $category->name,
+        'posts' => $category->posts,
+        'category' => $category->name
+    ]);
+});
+Route::get('/categories', function(Category $category){
+    return view('categories', [
+        'title' => 'Category',
+        'categories' => Category::all()
+    ]);
+});
 
 
 Route::match(['get', 'post'], '/botman', [BotmanController::class, 'handle']);
