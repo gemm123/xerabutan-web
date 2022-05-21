@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\BotmanController;
+use App\Http\Controllers\PostController;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,16 +17,25 @@ use \App\Http\Controllers\BotmanController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        "title" => "Home"]);
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about', [
+        "title" => "About"]);
 });
 
-Route::get('/carikeahlian', function () {
-    return view('carikeahlian');
+Route::get('/blog', function () {
+    return view('posts', [
+        "title" => "Posts",
+        "posts" => Post::all()
+    ]);
+
 });
+
+Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts/{post}', [PostController::class, 'show']);
 
 
 Route::match(['get', 'post'], '/botman', [BotmanController::class, 'handle']);

@@ -1,7 +1,12 @@
-@extends('layouts.main')
-
+@extends('layouts/main')
 @section('template')
-       <h1>Halaman Blog</h1>
+    @foreach ($posts as $post)
+    <article class="mb-4">
+        <h2><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
+        <h5>{{ $post->author }}</h5>
+        <p>{{ $post->excerpt }}</p>    
+    </article>    
+    @endforeach
 @endsection
 
 <script>

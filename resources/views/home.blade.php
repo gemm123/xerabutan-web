@@ -1,52 +1,135 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xerabutan - Salurkan Keahlianmu!</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">
-            <img src="xerabutan Logo.png" alt="logo xerabutan" width="240" height="32" href="/">
-          </a>
-          <div class="d-flex">
-              <div class="menu mt-2">
-                <a href="/" class="text-decoration-none biru-xerabutan fw-bold">Home</a>
-                <a href="/carikeahlian" class="ms-3 text-decoration-none biru-xerabutan fw-bold">Cari Keahlian</a>
-                <a href="/about" class="ms-3 text-decoration-none biru-xerabutan fw-bold">Tentang Kami</a>  
-              </div>
-              <div class="btn bg-biru-xerabutan text-wrap ms-3 me-5" style="width: 5em;">
-                <a href="#" class="text-decoration-none text-white fw-bold fs-6 btn-login">Login</a>
-              </div>
-          </div>
-        </div>
-    </nav>
+@extends('layouts.main')
+@section('template')
+<div class="container mb-3">
+    <div class="row">
+      <div class="col biru-xerabutan mt-5 ms-5">
+        <h1 class="fw-bold" style="font-size: 60px;">
+          Salurkan <br>
+          Keahlianmu!
+        </h1>
+        <p class="fs-4">
+          Tempat buat mahasiswa <br>
+          nambah skill dan uang jajan!
+        </p>
+        <a href="/gabung" class="fw-bold text-white bg-biru-xerabutan rounded btn-bg-pink-hover p-2 px-3 text-decoration-none me-3">Gabung</a>
+        <a href="/blog" class="fw-bold biru-xerabutan text-decoration-none border border-3 border-biru-xerabutan border-pink-hover rounded p-1">Cari Keahlian</a>
+      </div>
+      <div class="col text-center my-4">
+        <img src="image/bro.png" alt="" width="370px">
+      </div>
+    </div>
+  </div>
 
-    <footer class="bg-biru-xerabutan">
-        <div class="container py-4">
-            <div class="row text-center text-white">
-                <div class="col text-start">
-                    <p>
-                        contact@xerabutan.com <br>
-                        0813-9868-9316<br>
-                        Jalan Raya Cibanteng, Kabupaten Bogor.<br>
-                        @xerabutan<br>
-                    </p>
-                </div>
-                <div class="col">
-                    <p class="fw-bold fs-1">#Salurkan Keahlianmu</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+  <hr>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-</body>
+  <div class="container my-5">
+    <div class="row">
+      <div class="col text-center biru-xerabutan">
+        <h1 class="fw-bold" style="font-size: 60px;">
+          Apa itu Xerabutan?
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="d-flex justify-content-around mt-5">
+      <div class="card border-biru-xerabutan" style="width: 18rem; border: 2px solid;">
+        <img src="image/card1.png" class="card-img-top p-4" alt="" width="10px">
+        <div class="card-body text-center">
+          <h5>Tempat freelance khusus untuk mahasiswa</h5>
+          <p class="card-text">Kamu dapat menjual keahlianmu kepada mahasiswa lain di kampusmu</p>
+        </div>
+      </div>
+      <div class="card border-biru-xerabutan" style="width: 18rem; border: 2px solid;">
+        <img src="image/card2.png" class="card-img-top p-4" alt="" width="10px">
+        <div class="card-body text-center">
+          <h5>Raih uang jajan tambahan dengan mudah</h5>
+          <p class="card-text">Bingung mau tambah uang jajan? tawarkan keahlianmu dan dapatkan uang, GRATIS!</p>
+        </div>
+      </div>
+      <div class="card border-biru-xerabutan" style="width: 18rem; border: 2px solid;">
+        <img src="image/card3.png" class="card-img-top p-4" alt="" width="10px">
+        <div class="card-body text-center">
+          <h5>Pelajari skill baru dengan bantuan Chatbot</h5>
+          <p class="card-text">Bingung buat mulai belajar skill baru? Chatbot Xerabutan akan memandumu dalam belajar</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-3">
+    <div class="row">
+      <div class="col text-center">
+        <p class="fs-4">
+          Mau tau lebih lanjut? <span><a href="/about" class="biru-xerabutan">Tentang kami</a></span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col text-center biru-xerabutan">
+        <h1 class="fw-bold" style="font-size: 50px;">
+          Mau jadi freelancer Xerabutan?
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="d-flex justify-content-around mt-5">
+      <div class="card border-biru-xerabutan" style="width: 18rem; border: 2px solid;">
+        <img src="image/daftar.png" class="card-img-top px-5 pt-3" alt="" width="18px">
+        <div class="card-body text-center">
+          <h5>Daftarkan diri kamu sekarang!</h5>
+          <p class="card-text">Tekan tombol Gabung untuk mulai mendaftarkan data diri kamu</p>
+        </div>
+      </div>
+      <div class="card border-biru-xerabutan" style="width: 18rem; border: 2px solid;">
+        <img src="image/gmail2.png" class="card-img-top px-5 pt-3" alt="" width="18px">
+        <div class="card-body text-center">
+          <h5>Tunggu konfirmasi lewat e-mail kamu</h5>
+          <p class="card-text"> Kamu akan mendapatkan e-mail lanjutan untuk mulai freelance setelah berhasil mendaftar</p>
+        </div>
+      </div>
+      <div class="card border-biru-xerabutan" style="width: 18rem; border: 2px solid;">
+        <img src="image/upload.png" class="card-img-top px-5 pt-5" alt="" width="18px">
+        <div class="card-body text-center">
+          <h5>Upload keahlian yang ingin kamu jual!</h5>
+          <p class="card-text">Kamu dapat langsung mengupload keahlian yang kamu tawarkan setelah login ke website Xerabutan</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-3">
+    <div class="row">
+      <div class="col text-center">
+        <p class="fs-4">
+          Mau tau lebih lanjut? <span><a href="#" class="biru-xerabutan">Panduan freelancer</a></span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col text-center">
+        <h1 class="fw-bold" style="font-size: 50px;">
+          Belom punya skill buat freelance?
+        </h1>
+        <p class="fs-4">Ayo belajar skill baru dengan dipandu oleh chatbot Xerabutan!</p>
+      </div>
+    </div>
+  </div>  
+@endsection
+
 <script>
        var botmanWidget = {
               title: '💬 Xerabutan Chatbot',
@@ -57,5 +140,3 @@
        </script>
 
 <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
-
-</html>
