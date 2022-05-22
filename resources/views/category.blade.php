@@ -4,7 +4,7 @@
     @foreach ($posts as $post)
     <article class="mb-4">
         <h2><a href="/posts/{{ $post->slug }}">{{ $post->title }}</a></h2>
-        <h5>{{ $post->author }} - {{ $post->university }}</h5>
+        <h5>{{ $post->user->name }} - {{ $post->university }}</h5>
         <p>{{ $post->excerpt }}</p>    
     </article>
     @endforeach
