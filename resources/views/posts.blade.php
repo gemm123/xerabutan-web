@@ -1,14 +1,30 @@
 @extends('layouts/main')
 @section('template')
-    @foreach ($posts as $post)
-    <article class="mb-4">
-        <h2><a href="/posts/{{ $post->slug }}" class="text-decoration-none">{{ $post->title }}</a></h2>
-        <h5><a href="#" class="text-decoration-none">{{ $post->user->name }}</a> - {{ $post->university }} - <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none" > {{ $post->category->name }}</a></h5>
-        <p>{{ $post->excerpt }}</p>    
 
-        <a href="/posts/{{ $post->slug }}">Read more</a>
-    </article>    
-    @endforeach
+    <div class="continaer">
+        <div class="row">
+            @foreach ($posts as $post)
+                <div class="col-6 mb-4">
+                    <div class="card mx-auto" style="width: 450px;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="/posts/{{ $post->slug }}" class="text-decoration-none biru-xerabutan">{{ $post->title }}</a></h5>
+                            <p class="card-text">
+                                <a href="#" class="text-decoration-none" style="color: black">{{ $post->user->name }}</a> - 
+                                {{ $post->university }} - 
+                                <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none" style="color: black"> {{ $post->category->name }}</a> 
+                            </p>
+                            <p class="float-start">
+                                <img src="image/star.png" alt="" width="16px">
+                                <span class="mt-2">5.1</span>
+                            </p>
+                            <a href="/posts/{{ $post->slug }}" class="float-end" style="color: gray">Lihat detail ></a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
 @endsection
 
 <script>
