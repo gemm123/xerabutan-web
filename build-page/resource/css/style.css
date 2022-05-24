@@ -43,3 +43,23 @@ hr {
 .alert {
     background-color: rgba(255, 0, 0, 0.2);
 }
+
+.login {
+    min-height: 100vh;
+}
+
+.bg-image {
+    background-image: url('../image/login-page.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.login-heading {
+    font-weight: 300;
+}
+
+.btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+}
