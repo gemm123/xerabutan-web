@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Messages\Conversations\Conversation;
 use BotMan\BotMan\Messages\Incoming\Answer;
+use App\Conversations\ExampleConversation;
 
 class BotmanController extends Controller
 {
@@ -24,12 +25,17 @@ class BotmanController extends Controller
             } elseif (stripos($message, 'xerabutan') !== false) {
                 $this->askOptimasi($botman);
                 return $message;
-            } elseif (stripos($message, 'layanan') !== false || stripos($message, 'service') !== false) {
+            } elseif (stripos($message, 'kamu bisa apa') !== false || stripos($message, 'bisa apa') !== false) {
                 $this->askLayanan($botman);
+                return $message;
+            } elseif (stripos($message, 'start conversation') !== false) {
+                $this->startConversation($botman);
                 return $message;
             } else {
                 $botman->reply("Ucapkan 'Hai' untuk memulai percakapan...");
             }
+        
+            
         });
 
 
@@ -46,7 +52,7 @@ class BotmanController extends Controller
     {
         $botman->ask('Halo! Siapa nama kamu?', function (Answer $answer) {
             $this->name = $answer->getText();
-            $this->say('Hai ' . $this->name . ' , Apa yang ingin anda tanyakan?');
+            $this->say('Hai ' . $this->name . ', Apa yang ingin anda tanyakan?');
         });
     }
 
@@ -57,6 +63,15 @@ class BotmanController extends Controller
 
     public function askLayanan($botman)
     {
-        $botman->reply("Layanan dari kami salah satunya adalah monitoring website");
+        $botman->reply("Aku dapat membantumu mempelajari skill baru");
+    }
+
+     /**
+     * Loaded through routes/botman.php
+     * @param  BotMan $bot
+     */
+    public function startConversation(BotMan $bot)
+    {
+        $bot->startConversation(new ExampleConversation());
     }
 }
