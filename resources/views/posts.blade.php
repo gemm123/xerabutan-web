@@ -47,7 +47,7 @@
         @endif
         
     </div>
-    <div class="d-flex justify-content-end">
+    <div class="d-flex justify-content-center">
         {{ $posts->links() }}
     </div>
     
