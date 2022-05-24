@@ -5,6 +5,7 @@ use \App\Http\Controllers\BotmanController;
 use App\Http\Controllers\PostController;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,12 +20,16 @@ use App\Models\Post;
 
 Route::get('/', function () {
     return view('home', [
-        "title" => "Home"]);
+        "title" => "Home",
+        "active" => "home"
+    ]);
 });
 
 Route::get('/about', function () {
     return view('about', [
-        "title" => "About"]);
+        "title" => "About",
+        "about" => "about"
+    ]);
 });
 
 Route::get('/blog', function () {
@@ -37,15 +42,9 @@ Route::get('/blog', function () {
 
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
-Route::get('/categories/{category:slug}', function(Category $category){
-    return view('category', [
-        'title' => $category->name,
-        'posts' => $category->posts->load(['category', 'user']),
-        'category' => $category->name,
-    ]);
-});
+
 Route::get('/categories', function(Category $category){
-    return view('categories', [
+    return view('posts', [
         'title' => 'Category',
         'categories' => Category::all()
     ]);

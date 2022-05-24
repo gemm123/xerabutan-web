@@ -24,7 +24,7 @@
                 <a class="nav-link  biru-xerabutan fw-bold menu {{ ($title === "Home") ? 'active' : '' }}" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link biru-xerabutan fw-bold menu {{ ($title === "Posts") ? 'active' : '' }}" href="/blog">Cari Keahlian</a>
+                <a class="nav-link biru-xerabutan fw-bold menu {{ ($title === "Posts") ? 'active' : '' }}" href="/posts">Cari Keahlian</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link biru-xerabutan fw-bold menu {{ ($title === "About") ? 'active' : '' }}" href="/about">Tentang Kami</a>
