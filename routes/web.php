@@ -32,13 +32,13 @@ Route::get('/about', function () {
     ]);
 });
 
-Route::get('/blog', function () {
-    return view('posts', [
-        "title" => "Posts",
-        "posts" => Post::all()
-    ]);
+// Route::get('/blog', function () {
+//     return view('posts', [
+//         "title" => "Posts",
+//         "posts" => Post::all()
+//     ]);
 
-});
+// });
 
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);

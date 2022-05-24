@@ -30,7 +30,7 @@
                 <a class="nav-link biru-xerabutan fw-bold menu {{ ($title === "About") ? 'active' : '' }}" href="/about">Tentang Kami</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fw-bold text-white fw-bold fs-6 btn-bg-pink-hover bg-biru-xerabutan rounded px-3" aria-current="page" href="/" style="width: 75px;">Login</a>
+                <a class="nav-link fw-bold text-white fw-bold fs-6 btn-bg-pink-hover bg-biru-xerabutan rounded px-3" aria-current="page" href="/login" style="width: 75px;">Login</a>
               </li>
             </ul>
           </div>
