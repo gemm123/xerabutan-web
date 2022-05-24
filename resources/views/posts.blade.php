@@ -1,24 +1,6 @@
 @extends('layouts/main')
 @section('template')
 
-    {{-- <div class="container my-4">
-        <div class="row">
-            <div class="col align-self-center">
-                <h1 class="fw-bold biru-xerabutan" style="font-size: 50px;">
-                    Cari keahlian <br>
-                    yang kamu <br>
-                    butuhin!
-                </h1>
-            </div>
-            <div class="col align-self-center">
-                <h5>
-                    Jelajahi puluhan keahlian di Xerabutan
-                </h5>
-                
-            </div>
-        </div>
-    </div> --}}
-
     <div class="container">
         @if ($posts->count())
             <div class="row justify-content-center mb-3">
@@ -49,10 +31,6 @@
                                 <button type="submit" class="rounded border-biru-xerabutan" style="width: 50px; height: 40px;"><i class="bi bi-search"></i></button>
                             </div>
                         </div>
-                        {{-- <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Search.." name="search" value= "{{ request('search') }}">
-                            <button class="btn btn-outline-secondary" type="submit" >Search</button>
-                        </div> --}}
                     </form> 
                 </div>
             </div>
@@ -108,17 +86,3 @@
        </script>
 
 <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
-
-{{-- Post::create([
-    'title' => 'Freelance Esai Murah',
-    'slug' => 'freelance-esai-murah',
-    'category_id' => 2,
-    'author' => 'Qais',
-    'university' => 'Universitas Indonesia',
-    'excerpt' => 'nbvcxsdfghj uytrewerty jhgfdcvbn juyhtrd fghji uytgfvbnjkiuytfvbnjk iuytgfvbnjuytgf bjuytgfvbnmjuyhgtfv bnjuhg ',
-    'body' => 'jbhssfcauhonv vsdfdg ngfds sddfgsdvbg bs'
-])
-Category::create([
-    'name' => 'Programming',
-    'slug' => 'programming',
-]) --}}
