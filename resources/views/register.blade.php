@@ -13,7 +13,7 @@
 <body>
     
     <div class="container my-3">
-        <div class="row">
+        <div class="row mx-5">
             <div class="col biru-xerabutan">
                 <h1>Pendaftaran Freelancer Xerabutan</h1>
                 <p class="fs-5">Lengkapi data berikut untuk menyelesaikan pendaftaran.</p>

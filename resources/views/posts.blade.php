@@ -1,9 +1,9 @@
 @extends('layouts/main')
 @section('template')
 
-    <div class="container">
+    <div class="container ms-5 me-5">
         @if ($posts->count())
-            <div class="row justify-content-center mb-3">
+            <div class="row justify-content-center mb-3 me-5">
                 <div class="col align-self-center">
                     <h1 class="fw-bold biru-xerabutan" style="font-size: 50px;">
                         Cari keahlian <br>
@@ -11,7 +11,7 @@
                         butuhin!
                     </h1>
                 </div>
-                <div class="col align-self-center">
+                <div class="col align-self-center me-5">
                     <h5>
                         Jelajahi puluhan keahlian di Xerabutan
                     </h5>
@@ -35,7 +35,7 @@
                 </div>
             </div>
 
-            <hr class="m-0 my-4">
+            <hr class="my-4" style="margin-right: 200px">
 
             @if ($title == "Posts")
                 <p class="fw-bold biru-xerabutan fs-4">Keahlian yang tersedia</p>
@@ -46,7 +46,7 @@
             <div class="row">
                 @foreach ($posts as $post)
                     <div class="col-6 mb-4">
-                        <div class="card mx-auto" style="width: 550px;">
+                        <div class="card" style="width: 450px;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title"><a href="/posts/{{ $post->slug }}" class="text-decoration-none biru-xerabutan">{{ $post->title }}</a></h5>
