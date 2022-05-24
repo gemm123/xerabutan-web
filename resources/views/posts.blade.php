@@ -1,11 +1,39 @@
 @extends('layouts/main')
 @section('template')
 
+    {{-- <div class="container my-4">
+        <div class="row">
+            <div class="col align-self-center">
+                <h1 class="fw-bold biru-xerabutan" style="font-size: 50px;">
+                    Cari keahlian <br>
+                    yang kamu <br>
+                    butuhin!
+                </h1>
+            </div>
+            <div class="col align-self-center">
+                <h5>
+                    Jelajahi puluhan keahlian di Xerabutan
+                </h5>
+                
+            </div>
+        </div>
+    </div> --}}
+
     <div class="container">
-        <h1 class = "mb-3 text-center" >{{ $title }}</h1>
         @if ($posts->count())
             <div class="row justify-content-center mb-3">
-                <div class="col-md-6">
+                <div class="col align-self-center">
+                    <h1 class="fw-bold biru-xerabutan" style="font-size: 50px;">
+                        Cari keahlian <br>
+                        yang kamu <br>
+                        butuhin!
+                    </h1>
+                </div>
+                <div class="col align-self-center">
+                    <h5>
+                        Jelajahi puluhan keahlian di Xerabutan
+                    </h5>
+
                     <form action="/posts">
                         @if (request('category'))
                             <input type="hidden" name="category" value="{{ request('category') }}">
@@ -13,17 +41,34 @@
                         @if (request('user'))
                             <input type="hidden" name="user" value="{{ request('user') }}">
                         @endif
-                        <div class="input-group mb-3">
+                        <div class="row">
+                            <div class="col pe-0">
+                                <input type="text" name="search" id="" placeholder="Cari keahlian disini" class="form-control border-biru-xerabutan" value= "{{ request('search') }}">
+                            </div>
+                            <div class="col align-self-center">
+                                <button type="submit" class="rounded border-biru-xerabutan" style="width: 50px; height: 40px;"><i class="bi bi-search"></i></button>
+                            </div>
+                        </div>
+                        {{-- <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Search.." name="search" value= "{{ request('search') }}">
                             <button class="btn btn-outline-secondary" type="submit" >Search</button>
-                        </div>
+                        </div> --}}
                     </form> 
                 </div>
             </div>
+
+            <hr class="m-0 my-4">
+
+            @if ($title == "Posts")
+                <p class="fw-bold biru-xerabutan fs-4">Keahlian yang tersedia</p>
+            @else
+                <p class="fw-bold biru-xerabutan fs-4">{{ $title }}</p>
+            @endif
+
             <div class="row">
                 @foreach ($posts as $post)
                     <div class="col-6 mb-4">
-                        <div class="card mx-auto" style="width: 450px;">
+                        <div class="card mx-auto" style="width: 550px;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title"><a href="/posts/{{ $post->slug }}" class="text-decoration-none biru-xerabutan">{{ $post->title }}</a></h5>
