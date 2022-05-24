@@ -13,7 +13,7 @@
 <body>
     
     <div class="container my-3">
-        <div class="row">
+        <div class="row mx-5">
             <div class="col biru-xerabutan">
                 <h1>Registrasi</h1>
                 <p class="fs-5">Lengkapi data berikut untuk melakukan pendaftaran akun.</p>

@@ -1,11 +1,21 @@
 @extends('layouts/main')
 @section('template')
 
-    <div class="container">
-        <h1 class = "mb-3 text-center" >{{ $title }}</h1>
+    <div class="container ms-5 me-5">
         @if ($posts->count())
-            <div class="row justify-content-center mb-3">
-                <div class="col-md-6">
+            <div class="row justify-content-center mb-3 me-5">
+                <div class="col align-self-center">
+                    <h1 class="fw-bold biru-xerabutan" style="font-size: 50px;">
+                        Cari keahlian <br>
+                        yang kamu <br>
+                        butuhin!
+                    </h1>
+                </div>
+                <div class="col align-self-center me-5">
+                    <h5>
+                        Jelajahi puluhan keahlian di Xerabutan
+                    </h5>
+
                     <form action="/posts">
                         @if (request('category'))
                             <input type="hidden" name="category" value="{{ request('category') }}">
@@ -13,13 +23,26 @@
                         @if (request('user'))
                             <input type="hidden" name="user" value="{{ request('user') }}">
                         @endif
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Search.." name="search" value= "{{ request('search') }}">
-                            <button class="btn btn-outline-secondary" type="submit" >Search</button>
+                        <div class="row">
+                            <div class="col pe-0">
+                                <input type="text" name="search" id="" placeholder="Cari keahlian disini" class="form-control border-biru-xerabutan" value= "{{ request('search') }}">
+                            </div>
+                            <div class="col align-self-center">
+                                <button type="submit" class="rounded border-biru-xerabutan" style="width: 50px; height: 40px;"><i class="bi bi-search"></i></button>
+                            </div>
                         </div>
                     </form> 
                 </div>
             </div>
+
+            <hr class="my-4" style="margin-right: 200px">
+
+            @if ($title == "Posts")
+                <p class="fw-bold biru-xerabutan fs-4">Keahlian yang tersedia</p>
+            @else
+                <p class="fw-bold biru-xerabutan fs-4">{{ $title }}</p>
+            @endif
+
             <div class="row">
                 @foreach ($posts as $post)
                     <div class="col-6 mb-4">
@@ -63,17 +86,3 @@
        </script>
 
 <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
-
-{{-- Post::create([
-    'title' => 'Freelance Esai Murah',
-    'slug' => 'freelance-esai-murah',
-    'category_id' => 2,
-    'author' => 'Qais',
-    'university' => 'Universitas Indonesia',
-    'excerpt' => 'nbvcxsdfghj uytrewerty jhgfdcvbn juyhtrd fghji uytgfvbnjkiuytfvbnjk iuytgfvbnjuytgf bjuytgfvbnmjuyhgtfv bnjuhg ',
-    'body' => 'jbhssfcauhonv vsdfdg ngfds sddfgsdvbg bs'
-])
-Category::create([
-    'name' => 'Programming',
-    'slug' => 'programming',
-]) --}}
