@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\BotmanController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use App\Models\Category;
-use App\Models\Post;
-use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,27 +30,21 @@ Route::get('/about', function () {
         "title" => "About"
     ]);
 });
-Route::get('/login', function () {
-    return view('login', [
-        "title" => "Login"
-    ]);
-});
-Route::get('/register', function () {
-    return view('register', [
-        "title" => "Register",
-    ]);
-});
+Route::get('/login', [LoginController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
+
 
 
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
-Route::get('/categories/{category:slug}', function (Category $category) {
-    return view('category', [
-        'title' => $category->name,
-        'posts' => $category->posts->load(['category', 'user']),
-        'category' => $category->name,
-    ]);
-});
+// Route::get('/categories/{category:slug}', function (Category $category) {
+//     return view('category', [
+//         'title' => $category->name,
+//         'posts' => $category->posts->load(['category', 'user']),
+//         'category' => $category->name,
+//     ]);
+// });
 
 Route::get('/categories', function (Category $category) {
     return view('posts', [

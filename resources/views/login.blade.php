@@ -19,10 +19,18 @@
                 <div class="row">
                   <div class="col-md-9 col-lg-8 mx-auto">
                     <h1 class="fw-bold biru-xerabutan">Login</h1>
-                    <h3 class="login-heading mb-4 fs-5">Login untuk freelancer Xerabutan</h3>
-      
+                    <h3 class="login-heading mb-4 fs-5">Login untuk mulai menyalurkan keahlianmu!</h3>
+                    
+                    @if(session()->has('succes'))
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                      {{ session('succes') }}
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endif
+
                     <!-- Sign In Form -->
-                    <form>
+                    <form action="/login" method="POST">
+                      @csrf
                       <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                         <label for="floatingInput">Email address</label>

@@ -15,32 +15,53 @@
     <div class="container my-3">
         <div class="row">
             <div class="col biru-xerabutan">
-                <h1>Pendaftaran Freelancer Xerabutan</h1>
-                <p class="fs-5">Lengkapi data berikut untuk menyelesaikan pendaftaran.</p>
+                <h1>Registrasi</h1>
+                <p class="fs-5">Lengkapi data berikut untuk melakukan pendaftaran akun.</p>
             </div>
 
-            <form action="" class="biru-xerabutan">
-                <label for="" class="form-label fw-bold">Nama</label>
-                <input type="text" name="" id="" class="form-control">
-
-                <label for="" class="form-label fw-bold">E-mail</label>
-                <input type="email" name="" id="" class="form-control">
+            <form action="/register" method="POST" class="biru-xerabutan">
+                @csrf
+                {{-- <div class="form-floating mb-3">
+                    <input type="text" name="name" id="floatingInput" class="form-control @error('name') is-invalid @enderror" required value="{{ old('name') }}">
+                    <label for="floatingInput">Nama</label>
+                </div> --}}
+                <label for="name" class="form-label fw-bold">Nama</label>
+                <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" required value="{{ old('name') }}">
+                @error('name')
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+                <label for="email" class="form-label fw-bold">E-mail</label>
+                <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" required value="{{ old('email') }}">
+                @error('email')
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+                <label for="password" class="form-label fw-bold">Password</label>
+                <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror" required>
+                @error('password')
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+                <label for="nomorhp" class="form-label fw-bold">Nomor HP</label>
+                <input type="text" name="nomorhp" id="nomorhp" class="form-control @error('nomorhp') is-invalid @enderror" required value="{{ old('nomorhp') }}">
+                @error('nomorhp')
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+                {{-- <label for="univ" class="form-label fw-bold">Asal Institusi</label>
+                <input type="text" name="univ" id="univ" class="form-control">
                 
-                <label for="" class="form-label fw-bold">Password</label>
-                <input type="password" name="" id="" class="form-control">
-                
-                <label for="" class="form-label fw-bold">Nomor HP</label>
-                <input type="text" name="" id="" class="form-control">
-                
-                <label for="" class="form-label fw-bold">Asal Institusi</label>
-                <input type="text" name="" id="" class="form-control">
-                
-                <label for="" class="form-label fw-bold">Upload bukti mahasiswa (KTM)</label>
+                <label for="ktm" class="form-label fw-bold">Upload bukti mahasiswa (KTM)</label>
                 <div class="input-group mb-3">
                     <input type="file" class="form-control" id="inputGroupFile02">
-                </div>
+                </div> --}}
                 
-                <h5 class="alert border border-3 rounded border-pink-xerabutan p-1">
+                {{-- <h5 class="alert border border-3 rounded border-pink-xerabutan p-1 mt-3">
                     <div class="container d-inline-block">
                         <div class="row py-2">
                             <div class="col-1 text-center pe-0">
@@ -52,9 +73,9 @@
                             </div>
                         </div>
                     </div>
-                </h5>
+                </h5> --}}
 
-                <input type="button" value="Daftar >" class="bg-biru-xerabutan text-white rounded p-2 px-3 btn-bg-pink-hover border-biru-xerabutan border-pink-hover">
+                <input type="submit" value="Daftar" class="bg-biru-xerabutan text-white rounded p-2 px-3 btn-bg-pink-hover border-biru-xerabutan border-pink-hover mt-3">
                 <a href="" style="color: gray;" class="ms-3">Batalkan pendaftaran</a>
 
             </form>
