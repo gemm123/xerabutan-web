@@ -19,12 +19,24 @@ use App\Models\Post;
 
 Route::get('/', function () {
     return view('home', [
-        "title" => "Home"]);
+        "title" => "Home"
+    ]);
 });
 
 Route::get('/about', function () {
     return view('about', [
-        "title" => "About"]);
+        "title" => "About"
+    ]);
+});
+Route::get('/login', function () {
+    return view('login', [
+        "title" => "About"
+    ]);
+});
+Route::get('/register', function () {
+    return view('register', [
+        "title" => "About"
+    ]);
 });
 
 Route::get('/blog', function () {
@@ -32,19 +44,18 @@ Route::get('/blog', function () {
         "title" => "Posts",
         "posts" => Post::all()
     ]);
-
 });
 
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
-Route::get('/categories/{category:slug}', function(Category $category){
+Route::get('/categories/{category:slug}', function (Category $category) {
     return view('category', [
         'title' => $category->name,
         'posts' => $category->posts->load(['category', 'user']),
         'category' => $category->name,
     ]);
 });
-Route::get('/categories', function(Category $category){
+Route::get('/categories', function (Category $category) {
     return view('categories', [
         'title' => 'Category',
         'categories' => Category::all()
