@@ -28,6 +28,6 @@ class RegisterController extends Controller
         // if ($validatedData->fails()) {
         //     return redirect('/register')->withErrors($validatedData)->withInput();
         // }
-        return redirect('/login')->with($validatedData)->withInput();
+        return redirect('/login')->with('success', 'Registrasi berhasil, silakan login!');
     }
 }

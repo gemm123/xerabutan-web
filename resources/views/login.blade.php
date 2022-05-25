@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xerabutan - Salurkan Keahlianmu!</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     
@@ -21,9 +21,9 @@
                     <h1 class="fw-bold biru-xerabutan">Login</h1>
                     <h3 class="login-heading mb-4 fs-5">Login untuk mulai menyalurkan keahlianmu!</h3>
                     
-                    @if(session()->has('succes'))
+                    @if(session()->has('success'))
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                      {{ session('succes') }}
+                      {{ session('success') }}
                       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     @endif
