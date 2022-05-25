@@ -33,7 +33,6 @@
               @auth
               
               <li class="nav-item">
-                
                 <div class="dropdown fw-bold text-white fw-bold fs-6 btn-bg-pink-hover bg-biru-xerabutan rounded">
                   <button class="btn dropdown-toggle fw-bold text-white fw-bold fs-6 btn-bg-pink-hover bg-biru-xerabutan rounded" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     {{ auth()->user()->name }}
