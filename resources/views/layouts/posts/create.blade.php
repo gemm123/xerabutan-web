@@ -12,9 +12,14 @@
     <input type="text" name="title" id="title" class="form-control" required>
 
     <label for="slug" class="form-label fw-bold">Slug</label>
+<<<<<<< HEAD
     <input type="slug" name="slug" id="slug" class="form-control" required>
 
     <label for="slug" class="form-label fw-bold">Deskripsi</label>
+=======
+    <input type="text" name="slug" id="slug" class="form-control" required>
+    <label for="body" class="form-label fw-bold">Deskripsi</label>
+>>>>>>> 06d64d1ced4588db141f4d3c8aaafb833e523321
     <input type="text" name="body" id="body" class="form-control" required>
 
     {{-- <label for="packet" class="form-label fw-bold">Paket</label>
