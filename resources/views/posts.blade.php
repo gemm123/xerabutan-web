@@ -13,7 +13,7 @@
                 </div>
                 <div class="col align-self-center me-5">
                     <h5>
-                        Jelajahi puluhan keahlian di Xerabutan
+                        Jelajahi beragam keahlian di Xerabutan
                     </h5>
 
                     <form action="/posts">
@@ -47,9 +47,9 @@
                 @foreach ($posts as $post)
                     <div class="col-6 mb-4">
                         <div class="card" style="width: 450px;">
-                            <img src="" class="card-img-top" alt="...">
+                            <img src="image/photo-dummy.png" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title"><a href="/posts/{{ $post->slug }}" class="text-decoration-none biru-xerabutan">{{ $post->title }}</a></h5>
+                                <h5 class="card-title"><a href="/posts-{{ $post->slug }}" class="text-decoration-none biru-xerabutan">{{ $post->title }}</a></h5>
                                 <p class="card-text">
                                     <a href="/posts?user={{ $post->user->name }}" class="text-decoration-none" style="color: black">{{ $post->user->name }}</a> - 
                                     {{ $post->university }} - 
@@ -59,7 +59,7 @@
                                     <img src="image/star.png" alt="" width="16px">
                                     <span class="mt-2">5.1</span>
                                 </p>
-                                <a href="/posts/{{ $post->slug }}" class="float-end" style="color: gray">Lihat detail ></a>
+                                <a href="/posts-{{ $post->slug }}" class="float-end" style="color: gray">Lihat detail ></a>
                             </div>
                         </div>
                     </div>

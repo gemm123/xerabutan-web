@@ -19,7 +19,7 @@
                 <p class="fs-5">Lengkapi data berikut untuk melakukan pendaftaran akun.</p>
             </div>
 
-            <form action="/register" method="POST" class="biru-xerabutan">
+            <form action="/register" method="post" class="biru-xerabutan">
                 @csrf
                 {{-- <div class="form-floating mb-3">
                     <input type="text" name="name" id="floatingInput" class="form-control @error('name') is-invalid @enderror" required value="{{ old('name') }}">
@@ -40,7 +40,7 @@
                 </div>
                 @enderror
                 <label for="password" class="form-label fw-bold">Password</label>
-                <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror" required>
+                <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror">
                 @error('password')
                 <div id="validationServerUsernameFeedback" class="invalid-feedback">
                     {{ $message }}
