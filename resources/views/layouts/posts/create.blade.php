@@ -11,7 +11,7 @@
     <label for="title" class="form-label fw-bold">Judul</label>
     <input type="text" name="title" id="title" class="form-control" required>
     <label for="slug" class="form-label fw-bold">Slug</label>
-    <input type="slug" name="slug" id="slug" class="form-control" required>
+    <input type="text" name="slug" id="slug" class="form-control" required>
     <label for="body" class="form-label fw-bold">Deskripsi</label>
     <input type="text" name="body" id="body" class="form-control" required>
     <label for="packet" class="form-label fw-bold">Paket</label>
@@ -26,7 +26,7 @@
     const slug = document.querySelector('#slug');
 
     title.addEventListener('change',function(){
-        fetch('/dashboard-posts-checkSlug?title='+ title.value)
+        fetch('/dashboard-post-checkSlug?title='+ title.value)
             .then(response => response.json())
             .then(data => slug.value = data.slug)
     });
