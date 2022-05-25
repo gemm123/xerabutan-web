@@ -1,11 +1,57 @@
 @extends('layouts/main')
 @section('template')
-    <article class="mb-4">
-        <h1>{{ $post->title }}</h1>
-        <h5><a href="/posts?user={{ $post->user->name }}" class="text-decoration-none">{{ $post->user->name }}</a> - {{ $post->university }} in <a href="/posts?category= {{ $post->category->slug }}" class="text-decoration-none" >{{ $post->category->name }}</a></h5>
-        <p>{{ $post->body }}</p>    
-    </article> 
-    <a href="/posts" class="d-block mt-3">Back to Posts</a>   
+
+    <div class="container">
+        <div class="row">
+            <div class="col biru-xerabutan my-4">
+                <h1>{{ $post->title }}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <img src="image/photo-dummy.png" alt="" class="rounded" style="width: 1100px; height: 500px">
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col">
+                <h2><a href="/posts?user={{ $post->user->name }}" class="text-decoration-none biru-xerabutan pink-xerabutan-hover">{{ $post->user->name }}</a></h2>
+                <h4>
+                    {{ $post->university }} - 
+                    <a href="/posts?category= {{ $post->category->slug }}" class="text-decoration-none biru-xerabutan pink-xerabutan-hover" >{{ $post->category->name }}</a>
+                </h4>
+            </div>
+            <div class="col align-self-center">
+                <a href="#!" class="float-end btn bg-biru-xerabutan text-white btn-bg-pink-hover fw-bolder p-2 px-3">Pesan Sekarang</a>
+                <a href="#!" class="float-end btn biru-xerabutan border-biru-xerabutan border-pink-hover pink-xerabutan-hover border border-3 fw-bolder me-3">Hubungi freelancer</a>
+            </div>
+        </div>
+    </div>
+    
+    <hr class="mx-3">
+
+    <div class="container my-4 biru-xerabutan">
+        <div class="row">
+            <div class="col">
+                <h2>Deskripsi</h2>
+                <p>{{ $post->body }}</p> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Review</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Share</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="/posts" class="border border-2 rounded text-decoration-none p-1 border-biru-xerabutan biru-xerabutan fw-semibold">< Back to Posts</a>
+            </div>
+        </div>
+    </div>   
 @endsection
 
 <script>

@@ -46,8 +46,8 @@
             <div class="row">
                 @foreach ($posts as $post)
                     <div class="col-6 mb-4">
-                        <div class="card" style="width: 450px;">
-                            <img src="image/photo-dummy.png" class="card-img-top" alt="...">
+                        <div class="card" style="width: 450px;" id="card">
+                            <a href="/posts-{{ $post->slug }}"><img src="image/photo-dummy.png" class="card-img-top" alt="..." style="height: 200px"></a>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="/posts-{{ $post->slug }}" class="text-decoration-none biru-xerabutan">{{ $post->title }}</a></h5>
                                 <p class="card-text">
