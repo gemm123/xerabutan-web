@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Category;
+use App\Models\University;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class DashboardPostController extends Controller
 {
@@ -27,7 +30,10 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
-        return view('layouts.posts.create');
+        return view('layouts.posts.create',[
+            'categories' => Category::all(),
+            'universities' => University::all()
+        ]);
     }
 
     /**
@@ -38,7 +44,19 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $validatedData = $request->validate([
+           'title' => 'required|max:255',
+           'slug' => 'required|unique:posts',
+           'category_id' => 'required',
+           'university_id' => 'required',
+           'body' => 'required'
+       ]);
+
+       $validatedData['user_id'] = auth()->user()->id;
+    //    $validatedData['university_id'] = auth()->user()->id;
+
+       Post::create($validatedData);
+       return redirect('/dashboard/posts')->with('success','New post has been added!');
     }
 
     /**

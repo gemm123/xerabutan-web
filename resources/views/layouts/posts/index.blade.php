@@ -10,6 +10,12 @@
       <div class="col">
         <div class="table-responsive">
           <a href="/dashboard/posts/create" class="btn btn-primary">Create New Post</a>
+          {{-- ALERT SUCCES JUGA BELUM MUNCUL --}}
+          @if(session()->has('success'))
+            <div class="alert alert-success" role="alert">
+              {{ session('success') }}
+            </div>
+          @endif
           <table class="table">
             <thead>
               <tr>
