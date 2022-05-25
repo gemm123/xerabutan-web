@@ -11,7 +11,10 @@
           Tempat buat mahasiswa <br>
           nambah skill dan uang jajan!
         </p>
+        @auth
+        @else
         <a href="/register" class="fw-bold text-white bg-biru-xerabutan rounded btn-bg-pink-hover p-2 px-3 text-decoration-none me-3">Gabung</a>
+        @endauth
         <a href="/posts" class="fw-bold biru-xerabutan text-decoration-none border border-3 border-biru-xerabutan border-pink-hover rounded p-1">Cari Keahlian</a>
       </div>
       <div class="col text-center my-4">
