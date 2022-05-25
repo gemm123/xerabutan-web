@@ -28,6 +28,10 @@ Route::get('/about', function () {
     return view('about', [
     ]);
 });
+Route::get('/transaksi', function () {
+    return view('transaksi', [
+    ]);
+});
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');

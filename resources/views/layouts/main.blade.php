@@ -24,7 +24,7 @@
                 <a class="nav-link  biru-xerabutan fw-bold menu {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link biru-xerabutan fw-bold menu {{ Request::is('posts') ? 'active' : '' }}" href="/posts">Cari Keahlian</a>
+                <a class="nav-link biru-xerabutan fw-bold menu {{ Request::is('posts') ? 'active' : '' }} {{ Request::is('posts*') ? 'active' : '' }}" href="/posts">Cari Keahlian</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link biru-xerabutan fw-bold menu {{ Request::is('about') ? 'active' : '' }}" href="/about">Tentang Kami</a>
