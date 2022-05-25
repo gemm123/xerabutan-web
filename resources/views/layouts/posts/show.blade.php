@@ -8,7 +8,7 @@
     </div>
     <div class="row">
         <div class="col text-center">
-            <img src="image/photo-dummy.png" alt="" class="rounded" style="width: 1000px; height: 400px">
+            <img src="/image/photo-dummy.png" alt="" class="rounded" style="width: 1000px; height: 400px">
         </div>
     </div>
     <div class="row my-4">
@@ -39,7 +39,7 @@
     
     <div class="row">
         <div class="col">
-            <a href="/dashboard-posts" class="btn bg-biru-xerabutan text-white">Back</a>
+            <a href="/dashboard/posts" class="btn bg-biru-xerabutan text-white">Back</a>
             <a href="" class="btn bg-pink-xerabutan text-white">Edit</a>
             <a href="" class="btn btn-danger">Hapus</a>
         </div>

@@ -9,7 +9,7 @@
     <div class="row m-3">
       <div class="col">
         <div class="table-responsive">
-          <a href="/dashboard-post-create" class="btn btn-primary">Create New Post</a>
+          <a href="/dashboard/posts/create" class="btn btn-primary">Create New Post</a>
           <table class="table">
             <thead>
               <tr>
@@ -26,7 +26,7 @@
                     <td>{{ $post->title }}</td>
                     <td>{{ $post->category->name }}</td>
                     <td>
-                        <a href="/dashboard-posts-{{ $post->slug }}" class="badge bg-biru-xerabutan text-decoration-none p-2"><i class="bi bi-eye"></i></a>
+                        <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-biru-xerabutan text-decoration-none p-2"><i class="bi bi-eye"></i></a>
                         <a href="" class="badge bg-pink-xerabutan text-decoration-none p-2"><i class="bi bi-pencil-square"></i></a>
                         <a href="" class="badge bg-danger text-decoration-none p-2"><i class="bi bi-trash"></i></a>
                     </td>
