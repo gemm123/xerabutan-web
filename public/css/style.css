@@ -37,6 +37,9 @@
 .menu:hover {
     color:  #F1246F !important;
 }
+.active {
+    color:  #F1246F !important;
+}
 
 hr {
     border: 1px solid gray;
