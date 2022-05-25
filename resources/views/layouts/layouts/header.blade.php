@@ -11,14 +11,14 @@
         </a>
 
         <ul class="navbar-nav ms-auto d-flex flex-row">
-            <li class="mt-1">
-            <a class="me-5 text-decoration-none font-weight-bold" href="/">Home</a>
+            <li class="mt-2">
+            <a class="me-5 text-decoration-none fw-bold biru-xerabutan" href="/">Home</a>
             </li>
             <li>
             {{-- <a class="me-3 text-decoration-none btn btn-danger" href="/logout">Logout</a> --}}
             <form action="/logout" method="post">
                 @csrf
-                <button type="submit" class="nav-link text-decoration-none btn btn-danger"
+                <button type="submit" class="nav-link text-decoration-none btn bg-biru-xerabutan text-white p-2 me-4"
                 >Logout</button>
             </form>
             </li>
