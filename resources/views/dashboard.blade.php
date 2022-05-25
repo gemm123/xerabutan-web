@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('layouts.layouts.main')
 @section('template-dashboard')
 <div class="container">
     <div class="row">

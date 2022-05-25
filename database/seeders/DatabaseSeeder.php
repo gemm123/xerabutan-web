@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('12345678'),
             'nomorhp' => '082112341234',
         ]);
-
+        
         Category::create([
             'name' => 'Programming',
             'slug' => 'programming',
