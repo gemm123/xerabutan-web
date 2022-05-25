@@ -41,15 +41,15 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/dashboard', function(){
     return view('dashboard');
 })->middleware('auth');
-Route::get('/dashboard-checkSlug',[DashboardPostController::class,'checkSlug'])
+Route::get('/dashboard/checkSlug',[DashboardPostController::class,'checkSlug'])
 ->middleware('auth');
-Route::resource('/dashboard-posts', DashboardPostController::class)->middleware('auth');
-Route::get('/dashboard-posts-{post:slug}', [DashboardPostController::class, 'show'])->middleware('auth');
-Route::get('/dashboard-post-create', [DashboardPostController::class, 'create'])->middleware('auth');
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+//Route::get('/dashboard/posts/{post:slug}', [DashboardPostController::class, 'show'])->middleware('auth');
+//Route::get('/dashboard/post/create', [DashboardPostController::class, 'create'])->middleware('auth');
 
 
 Route::get('/posts', [PostController::class, 'index']);
-Route::get('/posts-{post:slug}', [PostController::class, 'show']);
+Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 // Route::get('/categories/{category:slug}', function (Category $category) {
 //     return view('category', [
 //         'title' => $category->name,

@@ -9,7 +9,7 @@
         </div>
         <div class="row">
             <div class="col text-center">
-                <img src="image/photo-dummy.png" alt="" class="rounded" style="width: 1100px; height: 500px">
+                <img src="/image/photo-dummy.png" alt="" class="rounded" style="width: 1100px; height: 500px">
             </div>
         </div>
         <div class="row my-4">

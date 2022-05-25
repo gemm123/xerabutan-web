@@ -6,7 +6,7 @@
         </button>
 
         <a class="navbar-brand" href="#">
-            <img src="image/Xerabutan LOGO.png" style="width: 150px;" alt="Logo"
+            <img src="/image/Xerabutan LOGO.png" style="width: 150px;" alt="Logo"
             loading="lazy" />
         </a>
 
