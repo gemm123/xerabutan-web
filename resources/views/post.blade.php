@@ -16,7 +16,7 @@
             <div class="col">
                 <h2><a href="/posts?user={{ $post->user->name }}" class="text-decoration-none biru-xerabutan pink-xerabutan-hover">{{ $post->user->name }}</a></h2>
                 <h4>
-                    {{ $post->university }} - 
+                    <a href="/posts?university={{ $post->university->slug }}" class="text-decoration-none biru-xerabutan pink-xerabutan-hover">{{ $post->university->name }}</a> - 
                     <a href="/posts?category= {{ $post->category->slug }}" class="text-decoration-none biru-xerabutan pink-xerabutan-hover" >{{ $post->category->name }}</a>
                 </h4>
             </div>
@@ -51,7 +51,7 @@
                 <a href="/posts" class="border border-2 rounded text-decoration-none p-1 border-biru-xerabutan biru-xerabutan fw-semibold">< Back to Posts</a>
             </div>
         </div>
-    </div>   
+    </div>
 @endsection
 
 <script>

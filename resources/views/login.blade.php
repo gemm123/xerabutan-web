@@ -29,14 +29,19 @@
                     @endif
 
                     <!-- Sign In Form -->
-                    <form action="/login" method="POST">
+                    <form action="/login" method="post">
                       @csrf
                       <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com"  value="{{ old('email') }}" autofocus required>
                         <label for="floatingInput">Email address</label>
+                        @error('email')
+                            <div class="invalid-feedback">
+                              {{ $message }}
+                            </div>
+                        @enderror
                       </div>
                       <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Password">
                         <label for="floatingPassword">Password</label>
                       </div>
       

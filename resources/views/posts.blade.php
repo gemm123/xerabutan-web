@@ -23,6 +23,9 @@
                         @if (request('user'))
                             <input type="hidden" name="user" value="{{ request('user') }}">
                         @endif
+                        @if (request('university'))
+                            <input type="hidden" name="university" value="{{ request('university') }}">
+                        @endif
                         <div class="row">
                             <div class="col pe-0">
                                 <input type="text" name="search" id="" placeholder="Cari keahlian disini" class="form-control border-biru-xerabutan" value= "{{ request('search') }}">
@@ -52,7 +55,7 @@
                                 <h5 class="card-title"><a href="/posts-{{ $post->slug }}" class="text-decoration-none biru-xerabutan">{{ $post->title }}</a></h5>
                                 <p class="card-text">
                                     <a href="/posts?user={{ $post->user->name }}" class="text-decoration-none" style="color: black">{{ $post->user->name }}</a> - 
-                                    {{ $post->university }} - 
+                                    <a href="/posts?university={{ $post->university->slug }}" class="text-decoration-none" style="color: black">{{ $post->university->name }}</a> -  
                                     <a href="/posts?category= {{ $post->category->slug }}" class="text-decoration-none" style="color: black"> {{ $post->category->name }}</a> 
                                 </p>
                                 <p class="float-start">

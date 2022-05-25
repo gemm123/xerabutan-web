@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\User;
+use App\Models\University;
 class PostController extends Controller
 {
     public function index(){
@@ -18,10 +19,14 @@ class PostController extends Controller
             $user = User::firstWhere('name',request('user')); 
             $title = ' by '.$user->name;
         }
+        if(request('university')){
+            $university = University::firstWhere('slug',request('university')); 
+            $title = ' from '.$university->name;
+        }
         return view('posts',[
             "title" => "Posts".$title ,
             "active" => "posts",
-            "posts" => Post::latest()-> filter(request(['search','category','user'])) 
+            "posts" => Post::latest()-> filter(request(['search','category','user','university'])) 
             ->paginate(6)
             ->withQueryString()
         ]);

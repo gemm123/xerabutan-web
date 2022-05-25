@@ -24,6 +24,12 @@ class Post extends Model
             });
         });
 
+        $query->when($filters['university']??false,function($query,$university){
+            return $query->whereHas('university',function($query) use($university){
+                $query->where('slug',$university);
+            });
+        });
+
         $query->when($filters['user']??false, fn($query, $user)=>
             $query->whereHas('user',fn($query)=>
                 $query->where('name',$user)
@@ -33,6 +39,10 @@ class Post extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+    public function university()
+    {
+        return $this->belongsTo(University::class);
     }
     public function User()
     {
