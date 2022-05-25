@@ -21,17 +21,41 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link  biru-xerabutan fw-bold menu {{ ($title === "Home") ? 'active' : '' }}" href="/">Home</a>
+                <a class="nav-link  biru-xerabutan fw-bold menu {{ Request::is('home') ? 'active' : '' }}" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link biru-xerabutan fw-bold menu {{ ($title === "Posts") ? 'active' : '' }}" href="/posts">Cari Keahlian</a>
+                <a class="nav-link biru-xerabutan fw-bold menu {{ Request::is('posts') ? 'active' : '' }}" href="/posts">Cari Keahlian</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link biru-xerabutan fw-bold menu {{ ($title === "About") ? 'active' : '' }}" href="/about">Tentang Kami</a>
+                <a class="nav-link biru-xerabutan fw-bold menu {{ Request::is('about') ? 'active' : '' }}" href="/about">Tentang Kami</a>
               </li>
+
+              @auth
+              
+              <li class="nav-item">
+                
+                <div class="dropdown fw-bold text-white fw-bold fs-6 btn-bg-pink-hover bg-biru-xerabutan rounded">
+                  <button class="btn dropdown-toggle fw-bold text-white fw-bold fs-6 btn-bg-pink-hover bg-biru-xerabutan rounded" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ auth()->user()->name }}
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+                    <li>
+                      <form action="/logout" method="post">
+                          @csrf
+                          <button type="submit" class="nav-link dropdown-item ps-3"
+                          >Logout</button>
+                      </form>
+                    </li>
+                  </ul>
+                </div>
+                
+              </li>
+              @else
               <li class="nav-item">
                 <a class="nav-link fw-bold text-white fw-bold fs-6 btn-bg-pink-hover bg-biru-xerabutan rounded px-3" aria-current="page" href="/login" style="width: 75px;">Login</a>
               </li>
+              @endauth
             </ul>
           </div>
         </div>
