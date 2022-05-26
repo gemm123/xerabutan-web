@@ -9,6 +9,7 @@
         <input type="text" name="name" id="floatingInput" class="form-control @error('name') is-invalid @enderror" required value="{{ old('name') }}">
         <label for="floatingInput">Nama</label>
     </div> --}}
+    <input type="hidden" name="is_admin" id="is_admin" class="form-control" required autofocus value="1">
     <label for="name" class="form-label fw-bold" >Nama</label>
     <input readonly type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" required autofocus value="{{ old('name', auth()->user()->name)}}">
     @error('name')

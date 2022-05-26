@@ -48,6 +48,7 @@ class DashboardPostController extends Controller
     {
        $validatedData = $request->validate([
            'title' => 'required|max:255',
+           'harga' => 'required',
            'slug' => 'required|unique:posts',
            'category_id' => 'required',
            'image' => 'image|file|max:10240',
@@ -104,6 +105,7 @@ class DashboardPostController extends Controller
     {
         $rules = [
             'title' => 'required|max:255',
+            'harga' => 'required',
             'category_id' => 'required',
             'university_id' => 'required',
             'image' => 'image|file|max:10240',

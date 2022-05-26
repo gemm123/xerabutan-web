@@ -3,13 +3,13 @@
 <div class="container">
     <div class="row m-3">
         <div class="col">
-            <h1>My Posts</h1>
+            <h1>Daftar Keahlian Saya</h1>
         </div>
     </div>
     <div class="row m-3">
       <div class="col">
         <div class="table-responsive">
-          <a href="/dashboard/posts/create" class="btn btn-primary">Create New Post</a>
+          <a href="/dashboard/posts/create" class="btn btn-primary">Tambah keahlian</a>
           {{-- ALERT SUCCES JUGA BELUM MUNCUL --}}
           @if(session()->has('success'))
             <div class="alert alert-success" role="alert">

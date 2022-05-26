@@ -11,7 +11,7 @@
     </div>
     <div class="row">
         <div class="col text-center">
-            <img src="image/transaksi.png" alt="transaksi" style="height: 300px; width: 900px">
+            <img src="/image/transaksi.png" alt="transaksi" style="height: 300px; width: 900px">
         </div>
     </div>
     <div class="row mt-4 mb-2">
@@ -23,22 +23,24 @@
     </div>
     <div class="row">
         <div class="col">
-            <form action="" class="biru-xerabutan">
-                
-                <div class="form-floating mb-3">
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                      <option selected>Pilih paket</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
-                    <label for="floatingSelect">Paket yang dipilih</label>
-                </div>
+            <form action="/dashboard/transaksi" method="post" class="biru-xerabutan">
+                @csrf
+                <input readonly type="hidden" name="name" id="name" class="form-control" required autofocus value="{{ auth()->user()->name }}">
 
-                <div class="form-floating mb-3">
+                <input readonly type="hidden" name="email" id="email" class="form-control" required autofocus value="{{ auth()->user()->email }}">
+
+                <input readonly type="hidden" name="nomorhp" id="nomorhp" class="form-control" required autofocus value="{{ auth()->user()->nomorhp }}">
+
+                <label for="title" class="form-label fw-bold mb-3" >Judul Keahlian</label>
+                <input readonly type="text" name="title" id="title" class="form-control" required autofocus value="{{ $post->title }}">
+                
+                <label for="harga" class="form-label fw-bold mb-3" >Harga</label>
+                <input readonly type="text" name="harga" id="harga" class="form-control" required autofocus value="{{ $post->harga }}">
+
+                {{-- <div class="form-floating mb-3 mt-3">
                     <input type="number" class="form-control" id="floatingInput" placeholder="name@example.com">
                     <label for="floatingInput">Jumlah pesanan</label>
-                </div>
+                </div> --}}
 
                 <div class="mb-3">
                     <label for="formFile" class="form-label fw-bold">Upload bukti pembayaran</label>
@@ -50,7 +52,7 @@
                     <div class="container d-inline-block">
                         <div class="row py-2">
                             <div class="col-1 text-center pe-0 align-self-center">
-                                <img src="image/alert.png" alt="" width="30px">
+                                <img src="/image/alert.png" alt="" width="30px">
                             </div>
                             <div class="col-11 ps-0">
                                 <span class="text-start fs-6">Jangan pernah melakukan pembayaran tanpa melalui rekening Xerabutan demi 

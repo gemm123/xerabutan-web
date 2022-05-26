@@ -16,6 +16,13 @@
             {{ $message }}
         </div>
     @enderror
+    <label for="harga" class="form-label fw-bold" >Harga</label>
+    <input type="text" name="harga" id="harga" class="form-control @error('harga') is-invalid @enderror" required autofocus value="{{ old('harga', $post->harga)}}">
+    @error('harga')
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
+    @enderror
     {{-- <label for="slug" class="form-label fw-bold">Slug</label> --}}
     <input type="hidden" name="slug" id="slug" class="form-control @error('slug') is-invalid @enderror" required value="{{ old('slug', $post->slug) }}">
     @error('slug')
@@ -33,8 +40,8 @@
             @endif
         @endforeach
     </select>
-    <label for="university" class="form-label fw-bold">Universitas</label>
-    <input readonly type="text" name="university_id" class="form-control @error('university_id') is-invalid @enderror" required autofocus value="{{ auth()->user()->university_id }}">
+    {{-- <label for="university" class="form-label fw-bold">Universitas</label> --}}
+    <input readonly type="hidden" name="university_id" class="form-control @error('university_id') is-invalid @enderror" required autofocus value="{{ auth()->user()->university_id }}">
     {{-- <select class="form-select" name="university_id">
         @foreach ($universities as $university)
             @if(old('university_id'==$university->id))
@@ -50,11 +57,11 @@
                     <input type="hidden" name="oldImage" value="{{ $post->image }}">
                     @if ($post->image)
                     <img src="/storage/{{ $post->image }}" class="image-preview image-fluid mb-3 col-sm-6 d-block">
-                    @else
-                    <img class="image-preview image-fluid mb-3 col-sm-6">
-                    @endif
-                    <input type="file" class="form-control @error('slug') is-invalid @enderror" id="image" name="image" required onchange="previewImage()">
                 </div>
+                    @else
+                    <img class="image-preview image-fluid mb-3 col-sm-6" width="700">
+                    @endif
+                    <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" required onchange="previewImage()">
 
     <label for="body" class="form-label fw-bold">Deskripsi</label>
     {{-- ERROR BODY MASI GA MUNCUL --}}

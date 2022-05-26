@@ -94,6 +94,7 @@ class AccountController extends Controller
         $rules = [
             'ktm' => 'image|file|max:10240',
             'university_id' => 'required',
+            'is_admin' => 'required'
         ];
         $validatedData['ktm'] = $request->file('ktm')->store('post-image');
         $validatedData = $request->validate($rules);

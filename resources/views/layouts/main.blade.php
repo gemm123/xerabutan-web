@@ -71,10 +71,10 @@
         <div class="row text-center text-white">
             <div class="col text-start">
                 <p class="mb-0">
-                    <span><a href="mailto:contact@xerabutan.com" target="_blank"><img src="image/gmail.png" alt="" width="20px" class="my-2 me-1"></a></span>contact@xerabutan.com <br>
-                    <span><a href="https://api.whatsapp.com/send/?phone=6281398589316&text&app_absent=0" target="_blank"><img src="image/wa.png" alt="" width="20px" class="my-2 me-1"></a></span>0813-9868-9316<br>
-                    <span><img src="image/alamat.png" alt="" width="20px" class="my-2 me-1"></span>Jalan Raya Cibanteng, Kabupaten Bogor.<br>
-                    <span><a href="https://www.instagram.com/xerabutan/" target="_blank"><img src="image/instagram.png" alt="" width="20px" class="my-2 me-1"></a></span>@xerabutan<br>
+                    <span><a href="mailto:contact@xerabutan.com" target="_blank"><img src="/image/gmail.png" alt="" width="20px" class="my-2 me-1"></a></span>contact@xerabutan.com <br>
+                    <span><a href="https://api.whatsapp.com/send/?phone=6281398589316&text&app_absent=0" target="_blank"><img src="/image/wa.png" alt="" width="20px" class="my-2 me-1"></a></span>0813-9868-9316<br>
+                    <span><img src="/image/alamat.png" alt="" width="20px" class="my-2 me-1"></span>Jalan Raya Cibanteng, Kabupaten Bogor.<br>
+                    <span><a href="https://www.instagram.com/xerabutan/" target="_blank"><img src="/image/instagram.png" alt="" width="20px" class="my-2 me-1"></a></span>@xerabutan<br>
                 </p>
             </div>
             <div class="col mt-5">

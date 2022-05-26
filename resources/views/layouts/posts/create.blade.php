@@ -22,6 +22,13 @@
                         {{ $message }}
                     </div>
                 @enderror
+                <label for="harga" class="form-label fw-bold" >Harga</label>
+                <input type="text" name="harga" id="harga" class="form-control @error('harga') is-invalid @enderror" required autofocus value="{{ old('harga') }}">
+                @error('harga')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
                 {{-- <label for="slug" class="form-label fw-bold">Slug</label> --}}
                 <input type="hidden" name="slug" id="slug" class="form-control @error('slug') is-invalid @enderror" required value="{{ old('slug') }}">
                 @error('slug')
@@ -41,7 +48,7 @@
                 </select>
                 <label for="image" class="form-label fw-bold">Upload Thumbnail</label>
                 <div class="input-group mb-3">
-                    <input type="file" class="form-control d-block @error('slug') is-invalid @enderror" id="image" name="image" required onchange="previewImage()">
+                    <input type="file" class="form-control d-block @error('image') is-invalid @enderror" id="image" name="image" required onchange="previewImage()">
                 </div>
                 <img class="image-preview" width="700">
                 @error('image')
@@ -57,7 +64,7 @@
                 {{-- <input type="text" name="body" id="body" class="form-control" required> --}}
                 {{-- <label for="packet" class="form-label fw-bold">Paket</label>
                 <input type="text" name="packet" id="packet" class="form-control" required> --}}
-                <button type="submit" class="bg-biru-xerabutan text-white rounded p-2 px-3 btn-bg-pink-hover border-biru-xerabutan border-pink-hover mt-3">Daftar</button>
+                <button type="submit" class="bg-biru-xerabutan text-white rounded p-2 px-3 btn-bg-pink-hover border-biru-xerabutan border-pink-hover mt-3">Create</button>
                 {{-- <input type="submit" value="Daftar" class="bg-biru-xerabutan text-white rounded p-2 px-3 btn-bg-pink-hover border-biru-xerabutan border-pink-hover mt-3"> --}}
                 <a href="/dashboard/posts" style="color: gray;" class="ms-3">Batalkan pendaftaran</a>
             

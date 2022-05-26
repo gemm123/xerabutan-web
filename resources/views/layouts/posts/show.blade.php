@@ -29,6 +29,7 @@
                 {{ $post->university->name }} - 
                 {{ $post->category->name }}
             </h4>
+            <h4><b>Rp{{ $post->harga }}</b></h4>
         </div>
     </div>
 </div>

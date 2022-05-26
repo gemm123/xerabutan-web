@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\TransaksiController;
 use App\Models\Category;
 
 /*
@@ -46,6 +47,7 @@ Route::get('/dashboard', function(){
 Route::get('/dashboard/posts/checkSlug',[DashboardPostController::class,'checkSlug'])
 ->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+Route::resource('/dashboard/transaksi', TransaksiController::class)->middleware('auth');
 Route::resource('/dashboard/jadifreelancer', AccountController::class)->middleware('auth');
 //Route::get('/dashboard/posts/{post:slug}', [DashboardPostController::class, 'show'])->middleware('auth');
 //Route::get('/dashboard/post/create', [DashboardPostController::class, 'create'])->middleware('auth');
@@ -53,8 +55,9 @@ Route::resource('/dashboard/jadifreelancer', AccountController::class)->middlewa
 
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
+Route::resource('/transaksi/{post:slug}', TransaksiController::class);
 
-Route::resource('/dashboard/categories',AdminCategoryController::class)->except('show')->middleware('admin');
+Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
 
 Route::match(['get', 'post'], '/botman', [BotmanController::class, 'handle']);
 Route::get('/botman/tinker',  [BotmanController::class, 'tinker']);
