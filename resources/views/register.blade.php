@@ -25,34 +25,55 @@
                     <input type="text" name="name" id="floatingInput" class="form-control @error('name') is-invalid @enderror" required value="{{ old('name') }}">
                     <label for="floatingInput">Nama</label>
                 </div> --}}
-                <label for="name" class="form-label fw-bold">Nama</label>
-                <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" required value="{{ old('name') }}">
+
+                {{-- <label for="name" class="form-label fw-bold">Nama</label>
+                <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" required value="{{ old('name') }}"> --}}
+                <div class="form-floating mb-3">
+                    <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" required value="{{ old('name') }}" placeholder="name">
+                    <label for="name">Nama Lengkap</label>
+                </div>
                 @error('name')
                 <div id="validationServerUsernameFeedback" class="invalid-feedback">
                     {{ $message }}
                 </div>
                 @enderror
-                <label for="email" class="form-label fw-bold">E-mail</label>
-                <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" required value="{{ old('email') }}">
+
+                {{-- <label for="email" class="form-label fw-bold">E-mail</label>
+                <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" required value="{{ old('email') }}"> --}}
+                <div class="form-floating mb-3">
+                    <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" required value="{{ old('email') }}" placeholder="email">
+                    <label for="email">E-mail</label>
+                </div>
                 @error('email')
                 <div id="validationServerUsernameFeedback" class="invalid-feedback">
                     {{ $message }}
                 </div>
                 @enderror
-                <label for="password" class="form-label fw-bold">Password</label>
-                <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror">
+
+                {{-- <label for="password" class="form-label fw-bold">Password</label>
+                <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror"> --}}
+                <div class="form-floating mb-3">
+                    <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror" required value="{{ old('password') }}" placeholder="Password">
+                    <label for="password">Password</label>
+                </div>
                 @error('password')
                 <div id="validationServerUsernameFeedback" class="invalid-feedback">
                     {{ $message }}
                 </div>
                 @enderror
-                <label for="nomorhp" class="form-label fw-bold">Nomor HP</label>
-                <input type="text" name="nomorhp" id="nomorhp" class="form-control @error('nomorhp') is-invalid @enderror" required value="{{ old('nomorhp') }}">
+
+                {{-- <label for="nomorhp" class="form-label fw-bold">Nomor HP</label>
+                <input type="text" name="nomorhp" id="nomorhp" class="form-control @error('nomorhp') is-invalid @enderror" required value="{{ old('nomorhp') }}"> --}}
+                <div class="form-floating mb-3">
+                    <input type="text" name="nomorhp" id="nomorhp" class="form-control @error('nomorhp') is-invalid @enderror" required value="{{ old('nomorhp') }}" placeholder="nomorhp">
+                    <label for="nomorhp">Nomor HP</label>
+                </div>
                 @error('nomorhp')
                 <div id="validationServerUsernameFeedback" class="invalid-feedback">
                     {{ $message }}
                 </div>
                 @enderror
+
                 {{-- <label for="univ" class="form-label fw-bold">Asal Institusi</label>
                 <input type="text" name="univ" id="univ" class="form-control">
                 
