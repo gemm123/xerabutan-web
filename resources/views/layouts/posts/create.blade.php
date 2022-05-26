@@ -53,8 +53,8 @@
                 <label for="image" class="form-label fw-bold">Upload Thumbnail</label>
                 <div class="input-group mb-3">
                     <input type="file" class="form-control d-block @error('slug') is-invalid @enderror" id="image" name="image" required onchange="previewImage()">
-                    <img class="image-preview image-fluid mb-3 col-sm-6 d-block">
                 </div>
+                <img class="image-preview" width="700">
                 @error('image')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
