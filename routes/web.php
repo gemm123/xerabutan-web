@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\AdminCategoryController;
 use App\Models\Category;
 
 /*
@@ -52,21 +53,8 @@ Route::get('/dashboard/jadifreelancer', [AccountController::class, 'index'])->mi
 
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
-// Route::get('/categories/{category:slug}', function (Category $category) {
-//     return view('category', [
-//         'title' => $category->name,
-//         'posts' => $category->posts->load(['category', 'user']),
-//         'category' => $category->name,
-//     ]);
-// });
 
-// Route::get('/categories', function (Category $category) {
-//     return view('posts', [
-//         'title' => 'Category',
-//         'categories' => Category::all()
-//     ]);
-// });
-
+Route::resource('/dashboard/categories',AdminCategoryController::class)->except('show')->middleware('admin');
 
 Route::match(['get', 'post'], '/botman', [BotmanController::class, 'handle']);
 Route::get('/botman/tinker',  [BotmanController::class, 'tinker']);

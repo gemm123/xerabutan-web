@@ -10,8 +10,22 @@
             <a class="nav-link  biru-xerabutan fw-bold menu {{ Request::is('dashboard/posts*') ? 'pink-xerabutan' : '' }}" href="/dashboard/posts">My Posts</a>
         </li>
         <li class="list-group-item py-1">
-            <a href="/dashboard/jadifreelancer" class="text-decoration-none biru-xerabutan fw-bold">Jadi Freelancer</a>
+            <a href="/dashboard/jadifreelancer" class="text-decoration-none biru-xerabutan fw-bold {{ Request::is('dashboard/jadifreelancer') ? 'pink-xerabutan' : '' }}">Jadi Freelancer</a>
         </li>
     </div>
+
+    @can('admin')
+    <h6 class="sidebar-heading d-flex justify-content-beetween align-items-center px-3 mt-4 mb-1 text-muted ">
+        <span>Administrator</span>
+    </h6>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link  biru-xerabutan fw-bold menu {{ Request::is('dashboard/categories*') ? 'pink-xerabutan' : '' }}" href="/dashboard/categories">
+                <span>Post categories</span>
+            </a>
+        </li>
+    </ul>
+    @endcan
+    
     </div>
 </nav>
