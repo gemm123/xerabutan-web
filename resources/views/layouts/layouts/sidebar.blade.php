@@ -10,7 +10,7 @@
             <a class="nav-link  biru-xerabutan fw-bold menu {{ Request::is('dashboard/posts*') ? 'pink-xerabutan' : '' }}" href="/dashboard/posts">My Posts</a>
         </li>
         <li class="list-group-item py-1">
-            <a href="/dashboard/account" class="text-decoration-none biru-xerabutan fw-bold">Account</a>
+            <a href="/dashboard/jadifreelancer" class="text-decoration-none biru-xerabutan fw-bold">Jadi Freelancer</a>
         </li>
     </div>
     </div>

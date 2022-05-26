@@ -33,8 +33,12 @@
                     <td>{{ $post->category->name }}</td>
                     <td>
                         <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-biru-xerabutan text-decoration-none p-2"><i class="bi bi-eye"></i></a>
-                        <a href="" class="badge bg-pink-xerabutan text-decoration-none p-2"><i class="bi bi-pencil-square"></i></a>
-                        <a href="" class="badge bg-danger text-decoration-none p-2"><i class="bi bi-trash"></i></a>
+                        <a href="/dashboard/posts/{{ $post->slug }}/edit" class="badge bg-pink-xerabutan text-decoration-none p-2"><i class="bi bi-pencil-square"></i></a>
+                        <form action="/dashboard/posts/{{ $post->slug }}" class="d-inline" method="post">
+                        @method('delete')
+                        @csrf
+                        <button class="badge bg-danger text-decoration-none p-2 border-0" onclick="return confirm('Hapus postingan?')"><i class="bi bi-trash"></i></button>
+                        </form>
                     </td>
                   </tr>
                 @endforeach

@@ -1,6 +1,6 @@
 @extends('layouts.layouts.main')
 @section('template-dashboard')
-<h1>Account</h1>
+<h1>Jadi Freelancer</h1>
 
 <form action="/dashboard/posts" method="post" class="biru-xerabutan">
     @csrf
@@ -9,12 +9,23 @@
         <label for="floatingInput">Nama</label>
     </div> --}}
     <label for="title" class="form-label fw-bold" >Nama</label>
-    <input disabled type="text" name="name" id="name" class="form-control" required autofocus value="{{ auth()->user()->name}}">
+    <input readonly type="text" name="name" id="name" class="form-control" required autofocus value="{{ auth()->user()->name}}">
     <label for="email" class="form-label fw-bold" >Email</label>
-    <input disabled type="text" name="email" id="email" class="form-control" required autofocus value="{{ auth()->user()->email}}">
-    <label for="university_id" class="form-label fw-bold" >Universitas</label>
-    <input disabled type="text" name="university_id" id="university_id" class="form-control" required autofocus value="{{ auth()->user()->university_id}}">
-    
+    <input readonly type="text" name="email" id="email" class="form-control" required autofocus value="{{ auth()->user()->email}}">
+    <label for="university_id" class="form-label fw-bold" >Pilih Universitas/Institusi</label>
+    <select class="form-select" name="university_id">
+        @foreach ($universities as $university)
+            @if(old('university_id'==$university->id))
+                <option value="{{ $university->id }}" selected>{{ $university->name }}</option>
+            @else
+                <option value="{{ $university->id }}">{{ $university->name }}</option>
+            @endif
+        @endforeach
+    </select>
+    <label for="ktm" class="form-label fw-bold">Upload bukti mahasiswa (KTM)</label>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="inputGroupFile02">
+                </div>
     {{-- <input type="text" name="body" id="body" class="form-control" required> --}}
     {{-- <label for="packet" class="form-label fw-bold">Paket</label>
     <input type="text" name="packet" id="packet" class="form-control" required> --}}

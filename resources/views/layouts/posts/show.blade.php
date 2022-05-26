@@ -40,8 +40,12 @@
     <div class="row">
         <div class="col">
             <a href="/dashboard/posts" class="btn bg-biru-xerabutan text-white">Back</a>
-            <a href="" class="btn bg-pink-xerabutan text-white">Edit</a>
-            <a href="" class="btn btn-danger">Hapus</a>
+            <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn bg-pink-xerabutan text-white">Edit</a>
+            <form action="/dashboard/posts/{{ $post->slug }}" class="d-inline" method="post">
+                @method('delete')
+                @csrf
+                <button class="btn btn-danger text-decoration-none p-2 border-0" onclick="return confirm('Hapus postingan?')">Hapus</button>
+                </form>
         </div>
     </div>
 </div>

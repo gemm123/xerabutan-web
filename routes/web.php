@@ -45,7 +45,7 @@ Route::get('/dashboard', function(){
 Route::get('/dashboard/posts/checkSlug',[DashboardPostController::class,'checkSlug'])
 ->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
-Route::get('/dashboard/account', [AccountController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/jadifreelancer', [AccountController::class, 'index'])->middleware('auth');
 //Route::get('/dashboard/posts/{post:slug}', [DashboardPostController::class, 'show'])->middleware('auth');
 //Route::get('/dashboard/post/create', [DashboardPostController::class, 'create'])->middleware('auth');
 
