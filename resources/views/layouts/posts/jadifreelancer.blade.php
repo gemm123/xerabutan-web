@@ -2,14 +2,20 @@
 @section('template-dashboard')
 <h1>Jadi Freelancer</h1>
 
-<form action="/dashboard/posts" method="post" class="biru-xerabutan">
+<form action="/dashboard/jadifreelancer/{{ auth()->user()->id }}" method="post" class="biru-xerabutan" enctype="multipart/form-data">
+    @method('put')
     @csrf
     {{-- <div class="form-floating mb-3">
         <input type="text" name="name" id="floatingInput" class="form-control @error('name') is-invalid @enderror" required value="{{ old('name') }}">
         <label for="floatingInput">Nama</label>
     </div> --}}
-    <label for="title" class="form-label fw-bold" >Nama</label>
-    <input readonly type="text" name="name" id="name" class="form-control" required autofocus value="{{ auth()->user()->name}}">
+    <label for="name" class="form-label fw-bold" >Nama</label>
+    <input readonly type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" required autofocus value="{{ old('name', auth()->user()->name)}}">
+    @error('name')
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
+    @enderror
     <label for="email" class="form-label fw-bold" >Email</label>
     <input readonly type="text" name="email" id="email" class="form-control" required autofocus value="{{ auth()->user()->email}}">
     <label for="university_id" class="form-label fw-bold" >Pilih Universitas/Institusi</label>
@@ -24,7 +30,7 @@
     </select>
     <label for="ktm" class="form-label fw-bold">Upload bukti mahasiswa (KTM)</label>
                 <div class="input-group mb-3">
-                    <input type="file" class="form-control" id="inputGroupFile02">
+                    <input type="file" name="ktm" class="form-control" id="ktm">
                 </div>
     {{-- <input type="text" name="body" id="body" class="form-control" required> --}}
     {{-- <label for="packet" class="form-label fw-bold">Paket</label>
