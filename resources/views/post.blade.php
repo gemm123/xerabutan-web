@@ -44,7 +44,7 @@
         <div class="row">
             <div class="col">
                 <h2>Deskripsi</h2>
-                <p>{{ $post->body }}</p> 
+                {!! $post->body !!}
             </div>
         </div>
         <div class="row">

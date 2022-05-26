@@ -39,17 +39,6 @@
                         @endif
                     @endforeach
                 </select>
-                <label for="university" class="form-label fw-bold">Universitas</label>
-                <input readonly type="text" name="university_id" class="form-control @error('university_id') is-invalid @enderror" required autofocus value="{{ auth()->user()->university_id }}">
-                {{-- <select class="form-select" name="university_id">
-                    @foreach ($universities as $university)
-                        @if(old('university_id'==$university->id))
-                            <option value="{{ $university->id }}" selected>{{ $university->name }}</option>
-                        @else
-                            <option value="{{ $university->id }}">{{ $university->name }}</option>
-                        @endif
-                    @endforeach
-                </select> --}}
                 <label for="image" class="form-label fw-bold">Upload Thumbnail</label>
                 <div class="input-group mb-3">
                     <input type="file" class="form-control d-block @error('slug') is-invalid @enderror" id="image" name="image" required onchange="previewImage()">

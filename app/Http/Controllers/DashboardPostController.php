@@ -50,7 +50,6 @@ class DashboardPostController extends Controller
            'title' => 'required|max:255',
            'slug' => 'required|unique:posts',
            'category_id' => 'required',
-           'university_id' => 'required',
            'image' => 'image|file|max:10240',
            'body' => 'required'
        ]);
@@ -59,8 +58,8 @@ class DashboardPostController extends Controller
            $validatedData['image'] = $request->file('image')->store('post-image');
        }
 
-       $validatedData['user_id'] = auth()->user()->id;
-    //    $validatedData['university_id'] = auth()->user()->id;
+        $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['university_id'] = auth()->user()->university_id;
 
        Post::create($validatedData);
        return redirect('/dashboard/posts')->with('success','New post has been added!');
