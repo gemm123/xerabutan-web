@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\University;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Contracts\Support\ValidatedData;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -106,6 +107,7 @@ class DashboardPostController extends Controller
             'title' => 'required|max:255',
             'category_id' => 'required',
             'university_id' => 'required',
+            'image' => 'image|file|max:10240',
             'body' => 'required'
         ];
 
@@ -113,7 +115,15 @@ class DashboardPostController extends Controller
             $rules['slug'] = 'required|unique:posts';
         }
 
+        
         $validatedData = $request->validate($rules);
+        
+        if($request->file('image')){
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('post-image');
+        }
 
         $validatedData['user_id'] = auth()->user()->id;
     //    $validatedData['university_id'] = auth()->user()->id;
@@ -130,6 +140,9 @@ class DashboardPostController extends Controller
      */
     public function destroy(Post $post)
     {
+        if($post->image){
+            Storage::delete($post->image);
+        }
         Post::destroy($post->id);
         return redirect('/dashboard/posts')->with('success','Post has been removed!');
     }

@@ -2,7 +2,7 @@
 @section('template-dashboard')
 <h1>Edit Post</h1>
 
-<form action="/dashboard/posts/{{ $post->slug }}" method="post" class="biru-xerabutan">
+<form action="/dashboard/posts/{{ $post->slug }}" method="post" class="biru-xerabutan" enctype="multipart/form-data">
     @method('put')
     @csrf
     {{-- <div class="form-floating mb-3">
@@ -44,6 +44,18 @@
             @endif
         @endforeach
     </select> --}}
+
+    <label for="image" class="form-label fw-bold">Upload Thumbnail</label>
+                <div class="input-group mb-3">
+                    <input type="hidden" name="oldImage" value="{{ $post->image }}">
+                    @if ($post->image)
+                    <img src="/storage/{{ $post->image }}" class="image-preview image-fluid mb-3 col-sm-6 d-block">
+                    @else
+                    <img class="image-preview image-fluid mb-3 col-sm-6">
+                    @endif
+                    <input type="file" class="form-control @error('slug') is-invalid @enderror" id="image" name="image" required onchange="previewImage()">
+                </div>
+
     <label for="body" class="form-label fw-bold">Deskripsi</label>
     {{-- ERROR BODY MASI GA MUNCUL --}}
     @error('body')
@@ -72,5 +84,19 @@
     document.addEventListener('trix-file-accept',function(e){
         e.preventDefault();
     })
+
+    function previewImage(){
+        const image = document.querySelector('#image');
+        const imgPreview = document.querySelector('.image-preview');
+
+        imgPreview.style.display = 'block';
+
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+        
+        oFReader.onload = function(oFREvent){
+            imgPreview.src = oFREvent.target.result;
+        }
+    }
 </script>
 @endsection

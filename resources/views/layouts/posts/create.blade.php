@@ -52,7 +52,8 @@
                 </select> --}}
                 <label for="image" class="form-label fw-bold">Upload Thumbnail</label>
                 <div class="input-group mb-3">
-                    <input type="file" class="form-control @error('slug') is-invalid @enderror" id="image" name="image" required>
+                    <input type="file" class="form-control d-block @error('slug') is-invalid @enderror" id="image" name="image" required onchange="previewImage()">
+                    <img class="image-preview image-fluid mb-3 col-sm-6 d-block">
                 </div>
                 @error('image')
                     <p class="text-danger">{{ $message }}</p>
@@ -89,5 +90,19 @@
     document.addEventListener('trix-file-accept',function(e){
         e.preventDefault();
     })
+
+    function previewImage(){
+        const image = document.querySelector('#image');
+        const imgPreview = document.querySelector('.image-preview');
+
+        imgPreview.style.display = 'block';
+
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+        
+        oFReader.onload = function(oFREvent){
+            imgPreview.src = oFREvent.target.result;
+        }
+    }
 </script>
 @endsection
