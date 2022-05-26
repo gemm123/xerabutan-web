@@ -19,8 +19,10 @@ return new class extends Migration
             // $table->string('username');
             $table->string('email')->unique();
             $table->string('nomorhp');
-            $table->timestamp('email_verified_at')->nullable();
+            //$table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->foreignId('university_id')->nullable();
+            $table->string('ktm')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

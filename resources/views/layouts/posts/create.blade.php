@@ -15,8 +15,8 @@
             {{ $message }}
         </div>
     @enderror
-    <label for="slug" class="form-label fw-bold">Slug</label>
-    <input type="text" name="slug" id="slug" class="form-control @error('slug') is-invalid @enderror" required value="{{ old('slug') }}">
+    {{-- <label for="slug" class="form-label fw-bold">Slug</label> --}}
+    <input type="hidden" name="slug" id="slug" class="form-control @error('slug') is-invalid @enderror" required value="{{ old('slug') }}">
     @error('slug')
         <div class="invalid-feedback">
             {{ $message }}
@@ -33,7 +33,8 @@
         @endforeach
     </select>
     <label for="university" class="form-label fw-bold">Universitas</label>
-    <select class="form-select" name="university_id">
+    <input readonly type="text" name="university_id" class="form-control @error('university_id') is-invalid @enderror" required autofocus value="{{ auth()->user()->university_id }}">
+    {{-- <select class="form-select" name="university_id">
         @foreach ($universities as $university)
             @if(old('university_id'==$university->id))
                 <option value="{{ $university->id }}" selected>{{ $university->name }}</option>
@@ -41,7 +42,7 @@
                 <option value="{{ $university->id }}">{{ $university->name }}</option>
             @endif
         @endforeach
-    </select>
+    </select> --}}
     <label for="body" class="form-label fw-bold">Deskripsi</label>
     {{-- ERROR BODY MASI GA MUNCUL --}}
     @error('body')

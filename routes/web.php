@@ -6,6 +6,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\AccountController;
 use App\Models\Category;
 
 /*
@@ -44,8 +45,9 @@ Route::get('/dashboard', function(){
 Route::get('/dashboard/posts/checkSlug',[DashboardPostController::class,'checkSlug'])
 ->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
-Route::get('/dashboard/posts/{post:slug}', [DashboardPostController::class, 'show'])->middleware('auth');
-Route::get('/dashboard/post/create', [DashboardPostController::class, 'create'])->middleware('auth');
+Route::get('/dashboard/account', [AccountController::class, 'index'])->middleware('auth');
+//Route::get('/dashboard/posts/{post:slug}', [DashboardPostController::class, 'show'])->middleware('auth');
+//Route::get('/dashboard/post/create', [DashboardPostController::class, 'create'])->middleware('auth');
 
 
 Route::get('/posts', [PostController::class, 'index']);
@@ -58,12 +60,12 @@ Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 //     ]);
 // });
 
-Route::get('/categories', function (Category $category) {
-    return view('posts', [
-        'title' => 'Category',
-        'categories' => Category::all()
-    ]);
-});
+// Route::get('/categories', function (Category $category) {
+//     return view('posts', [
+//         'title' => 'Category',
+//         'categories' => Category::all()
+//     ]);
+// });
 
 
 Route::match(['get', 'post'], '/botman', [BotmanController::class, 'handle']);
