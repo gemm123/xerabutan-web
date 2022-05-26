@@ -50,8 +50,13 @@ class DashboardPostController extends Controller
            'slug' => 'required|unique:posts',
            'category_id' => 'required',
            'university_id' => 'required',
+           'image' => 'image|file|max:10240',
            'body' => 'required'
        ]);
+
+       if($request->file('image')){
+           $validatedData['image'] = $request->file('image')->store('post-image');
+       }
 
        $validatedData['user_id'] = auth()->user()->id;
     //    $validatedData['university_id'] = auth()->user()->id;

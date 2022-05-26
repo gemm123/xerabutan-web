@@ -9,7 +9,7 @@
     </div>
     <div class="row mx-3">
         <div class="col">
-            <form action="/dashboard/posts" method="post" class="biru-xerabutan">
+            <form action="/dashboard/posts" method="post" class="biru-xerabutan" enctype="multipart/form-data">
                 @csrf
                 {{-- <div class="form-floating mb-3">
                     <input type="text" name="name" id="floatingInput" class="form-control @error('name') is-invalid @enderror" required value="{{ old('name') }}">
@@ -50,6 +50,13 @@
                         @endif
                     @endforeach
                 </select> --}}
+                <label for="image" class="form-label fw-bold">Upload Thumbnail</label>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control @error('slug') is-invalid @enderror" id="image" name="image" required>
+                </div>
+                @error('image')
+                    <p class="text-danger">{{ $message }}</p>
+                @enderror
                 <label for="body" class="form-label fw-bold">Deskripsi</label>
                 {{-- ERROR BODY MASI GA MUNCUL --}}
                 @error('body')

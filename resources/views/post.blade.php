@@ -8,9 +8,20 @@
             </div>
         </div>
         <div class="row">
-            <div class="col text-center">
-                <img src="/image/photo-dummy.png" alt="" class="rounded" style="width: 1100px; height: 500px">
+            @if ($post->image)
+            <div class="row">
+                <div class="col text-center">
+                    <img src="/storage/{{ $post->image }}" alt="thumbnail" class="rounded" style="height: 400px">
+                </div>
             </div>
+
+            @else
+            <div class="row">
+                <div class="col text-center">
+                    <img src="/image/photo-dummy.png" alt="" class="rounded" style= "height: 400px">
+                </div>
+            </div>
+            @endif
         </div>
         <div class="row my-4">
             <div class="col">

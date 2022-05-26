@@ -6,11 +6,22 @@
             <h1>{{ $post->title }}</h1>
         </div>
     </div>
+    
+    @if ($post->image)
+    <div class="row">
+        <div class="col text-center">
+            <img src="/storage/{{ $post->image }}" alt="thumbnail" class="rounded" style="width: 1000px; height: 400px">
+        </div>
+    </div>
+
+    @else
     <div class="row">
         <div class="col text-center">
             <img src="/image/photo-dummy.png" alt="" class="rounded" style="width: 1000px; height: 400px">
         </div>
     </div>
+    @endif
+    
     <div class="row my-4">
         <div class="col">
             <h2 class="text-decoration-none biru-xerabutan">{{ $post->user->name }}</h2>
