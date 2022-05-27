@@ -5,7 +5,7 @@
             <i class="fas fa-bars"></i>
         </button>
 
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand ms-3" href="/">
             <img src="/image/Xerabutan LOGO.png" style="width: 150px;" alt="Logo"
             loading="lazy" />
         </a>
