@@ -21,11 +21,17 @@
               </tr>
             </thead>
             <tbody>
-                {{-- @foreach ($categories as $category)
+                @foreach ($transactions as $transaction)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $category->name }}</td>
-                    <td>
+                    <td>{{ $transaction->user->name }}</td>
+                    <td>{{ $transaction->user->email }}</td>
+                    <td>{{ $transaction->user->nomorhp }}</td>
+                    <td>{{ $transaction->post->title }}</td>
+                    <td><a href="/public/storage/{{ $transaction->bukti }}">Lihat</a></td>
+                    {{-- <td>{{ $transaction->user->email }}</td>
+                    <td>{{ $transaction->user->nomorhp }}</td> --}}
+                    {{-- <td>
                         <a href="/dashboard/categories/{{ $category->slug }}" class="badge bg-biru-xerabutan text-decoration-none p-2"><i class="bi bi-eye"></i></a>
                         <a href="/dashboard/categories/{{ $category->slug }}/edit" class="badge bg-pink-xerabutan text-decoration-none p-2"><i class="bi bi-pencil-square"></i></a>
                         <form action="/dashboard/categories/{{ $category->slug }}" class="d-inline" method="post">
@@ -33,9 +39,9 @@
                         @csrf
                         <button class="badge bg-danger text-decoration-none p-2 border-0" onclick="return confirm('Hapus postingan?')"><i class="bi bi-trash"></i></button>
                         </form>
-                    </td>
+                    </td> --}}
                   </tr>
-                @endforeach --}}
+                @endforeach
             </tbody>
           </table>
         </div>

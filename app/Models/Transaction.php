@@ -9,12 +9,14 @@ class Transaction extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
-    public function posts()
+
+    public function post()
     {
-        return $this->belongTo(Post::class);
+        return $this->belongsTo(Post::class);
     }
-    public function user()
+    public function User()
     {
-        return $this->belongTo(User::class,'user_id');
+        return $this->belongsTo(User::class,'user_id');
     }
 }
+

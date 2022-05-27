@@ -23,8 +23,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <form action="transaksi/store" method="post" class="biru-xerabutan" enctype="multipart/form-data">
-                @method('put')
+            <form action="" method="post" class="biru-xerabutan" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="name" id="name" class="form-control" required autofocus value="{{ auth()->user()->name }}">
 
@@ -32,6 +31,7 @@
 
                 <input type="hidden" name="nomorhp" id="nomorhp" class="form-control" required autofocus value="{{ auth()->user()->nomorhp }}">
                 <input type="hidden" name="post_id" id="post_id" class="form-control" required autofocus value="{{ $post->id }}">
+                <input type="hidden" name="postUser_id" id="postUser_id" class="form-control" required autofocus value="{{ $post->user->id }}">
 
                 <label for="title" class="form-label fw-bold mb-3" >Judul Keahlian</label>
                 <input readonly type="text" name="title" id="title" class="form-control" required autofocus value="{{ $post->title }}">
@@ -64,7 +64,7 @@
                     </div>
                 </h5>
 
-                <input type="submit" value="Selesaikan pembayaran" class="bg-biru-xerabutan text-white rounded p-2 px-3 btn-bg-pink-hover border-biru-xerabutan border-pink-hover mt-3">
+                <input type="submit" value="order" class="bg-biru-xerabutan text-white rounded p-2 px-3 btn-bg-pink-hover border-biru-xerabutan border-pink-hover mt-3">
                 <a href="/posts" style="color: gray;" class="ms-3">Batalkan pesanan</a>
 
             </form>

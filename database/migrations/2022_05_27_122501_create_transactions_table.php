@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('post_id');
             $table->foreignId('user_id');
             $table->string('bukti');
+            $table->integer('postUser_id');
             $table->timestamps();
         });
     }

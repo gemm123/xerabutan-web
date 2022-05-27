@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
 use App\Models\Transaction;
-use Illuminate\Http\Request;
 use App\Http\Requests\StoreTransactionRequest;
 use App\Http\Requests\UpdateTransactionRequest;
 
@@ -17,7 +15,7 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        return view('layouts.transaksi.index');
+        //
     }
 
     /**
@@ -25,11 +23,9 @@ class TransactionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Post $post)
+    public function create()
     {
-        return view('transaksi', [
-            'post' => $post,
-        ]);
+        //
     }
 
     /**
@@ -38,25 +34,9 @@ class TransactionController extends Controller
      * @param  \App\Http\Requests\StoreTransactionRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Post $post)
+    public function store(StoreTransactionRequest $request)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|max:255',
-            'email' => 'required',
-            'nomorhp' => 'required',
-            'bukti' => 'image|file|max:10240',
-            'post_id' => 'required',
-        ]);
- 
-        if($request->file('bukti')){
-            $validatedData['bukti'] = $request->file('bukti')->store('post-image');
-        }
- 
-         $validatedData['user_id'] = auth()->user()->id;
-         $validatedData['post_id'] = $post->id;
- 
-        Transaction::create($validatedData);
-        return redirect('/');
+        //
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\University;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Facades\Storage;
@@ -151,5 +152,13 @@ class DashboardPostController extends Controller
     {
         $slug= SlugService::createSlug(Post::class,'slug',$request->title);
         return response()->json(['slug' => $slug]);
+    }
+    
+    public function table(Transaction $transaction)
+    {
+        return view('layouts.transaksi.index', [
+            'transactions' => Transaction::where('postUser_id', auth()->user()->id)->get()
+        ]);
+
     }
 }
