@@ -11,7 +11,7 @@
             @if ($post->image)
             <div class="row">
                 <div class="col text-center">
-                    <img src="/storage/{{ $post->image }}" alt="thumbnail" class="rounded" style="height: 400px">
+                    <img src="/storage/{{ $post->image }}" alt="thumbnail" class="rounded img-fluid" height="400">
                 </div>
             </div>
 
