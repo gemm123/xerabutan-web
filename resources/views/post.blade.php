@@ -33,7 +33,7 @@
                 <h4><b>Rp{{ $post->harga }}</b></h4>
             </div>
             <div class="col align-self-center">
-                <a href="/transaksi/{{ $post->slug }}/create" class="float-end btn bg-biru-xerabutan text-white btn-bg-pink-hover fw-bolder p-2 px-3">Pesan Sekarang</a>
+            <a href="/transaksi/{{ $post->slug }}/create" class="float-end btn bg-biru-xerabutan text-white btn-bg-pink-hover fw-bolder p-2 px-3">Pesan Sekarang</a>
                 <a href="#!" class="float-end btn biru-xerabutan border-biru-xerabutan border-pink-hover pink-xerabutan-hover border border-3 fw-bolder me-3">Hubungi freelancer</a>
             </div>
         </div>

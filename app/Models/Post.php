@@ -50,6 +50,10 @@ class Post extends Model
     {
         return $this->belongsTo(User::class,'user_id');
     }
+    public function Transaction()
+    {
+        return $this->hasMany(Transaction::class);
+    }
     public function getRouteKeyName(){
         return 'slug';
     }

@@ -12,9 +12,11 @@ class TransaksiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Post $post)
     {
-        return view('layouts.transaksi.index');
+        // return view('transaksi', [
+        //     'post' => $post,
+        // ]);
     }
 
     /**
@@ -27,7 +29,6 @@ class TransaksiController extends Controller
         return view('transaksi', [
             'post' => $post,
         ]);
-        
     }
 
     /**
@@ -49,7 +50,7 @@ class TransaksiController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        
     }
 
     /**
@@ -60,7 +61,7 @@ class TransaksiController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        
     }
 
     /**
@@ -72,7 +73,7 @@ class TransaksiController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+    
     }
 
     /**

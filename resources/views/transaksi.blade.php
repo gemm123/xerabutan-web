@@ -23,13 +23,15 @@
     </div>
     <div class="row">
         <div class="col">
-            <form action="/dashboard/transaksi" method="post" class="biru-xerabutan">
+            <form action="transaksi/store" method="post" class="biru-xerabutan" enctype="multipart/form-data">
+                @method('put')
                 @csrf
-                <input readonly type="hidden" name="name" id="name" class="form-control" required autofocus value="{{ auth()->user()->name }}">
+                <input type="hidden" name="name" id="name" class="form-control" required autofocus value="{{ auth()->user()->name }}">
 
-                <input readonly type="hidden" name="email" id="email" class="form-control" required autofocus value="{{ auth()->user()->email }}">
+                <input type="hidden" name="email" id="email" class="form-control" required autofocus value="{{ auth()->user()->email }}">
 
-                <input readonly type="hidden" name="nomorhp" id="nomorhp" class="form-control" required autofocus value="{{ auth()->user()->nomorhp }}">
+                <input type="hidden" name="nomorhp" id="nomorhp" class="form-control" required autofocus value="{{ auth()->user()->nomorhp }}">
+                <input type="hidden" name="post_id" id="post_id" class="form-control" required autofocus value="{{ $post->id }}">
 
                 <label for="title" class="form-label fw-bold mb-3" >Judul Keahlian</label>
                 <input readonly type="text" name="title" id="title" class="form-control" required autofocus value="{{ $post->title }}">
@@ -43,9 +45,9 @@
                 </div> --}}
 
                 <div class="mb-3">
-                    <label for="formFile" class="form-label fw-bold">Upload bukti pembayaran</label>
+                    <label for="bukti" class="form-label fw-bold">Upload bukti pembayaran</label>
                     <span>(jpg/png/jpeg)</span>
-                    <input class="form-control" type="file" id="formFile">
+                    <input class="form-control" type="file" name="bukti" id="bukti">
                 </div>
 
                 <h5 class="alert border border-3 rounded border-pink-xerabutan p-1 mt-3">
@@ -62,8 +64,8 @@
                     </div>
                 </h5>
 
-                <input type="submit" value="Selesaikan pembayaran >" class="bg-biru-xerabutan text-white rounded p-2 px-3 btn-bg-pink-hover border-biru-xerabutan border-pink-hover mt-3">
-                <a href="" style="color: gray;" class="ms-3">Batalkan pesanan</a>
+                <input type="submit" value="Selesaikan pembayaran" class="bg-biru-xerabutan text-white rounded p-2 px-3 btn-bg-pink-hover border-biru-xerabutan border-pink-hover mt-3">
+                <a href="/posts" style="color: gray;" class="ms-3">Batalkan pesanan</a>
 
             </form>
         </div>

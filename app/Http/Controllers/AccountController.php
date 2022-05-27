@@ -47,7 +47,7 @@ class AccountController extends Controller
         ]);
  
         if($request->file('ktm')){
-            $validatedData['ktm'] = $request->file('ktm')->store('post-image');
+            $validatedData['ktm'] = $request->file('ktm')->store('post-image');  
         }
  
          $validatedData['user_id'] = auth()->user()->id;
