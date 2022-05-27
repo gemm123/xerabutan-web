@@ -1,13 +1,13 @@
 @extends('layouts.layouts.main')
 @section('template-dashboard')
 <div class="container">
-    <div class="row m-3">
-        <div class="col">
+    <div class="row">
+        <div class="col m-4 mb-0">
             <h1>Daftar Transaksi</h1>
         </div>
     </div>
-    <div class="row m-3">
-      <div class="col">
+    <div class="row">
+      <div class="col m-4 mt-0">
         <div class="table-responsive">
           <table class="table">
             <thead>

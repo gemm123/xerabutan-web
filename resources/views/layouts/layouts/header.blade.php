@@ -18,7 +18,7 @@
             {{-- <a class="me-3 text-decoration-none btn btn-danger" href="/logout">Logout</a> --}}
             <form action="/logout" method="post">
                 @csrf
-                <button type="submit" class="nav-link text-decoration-none btn bg-biru-xerabutan text-white p-2 me-4"
+                <button type="submit" class="nav-link text-decoration-none btn bg-pink-xerabutan text-white p-2 pt-1 me-4"
                 >Logout</button>
             </form>
             </li>

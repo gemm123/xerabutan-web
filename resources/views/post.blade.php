@@ -30,7 +30,7 @@
                     <a href="/posts?university={{ $post->university->slug }}" class="text-decoration-none biru-xerabutan pink-xerabutan-hover">{{ $post->university->name }}</a> - 
                     <a href="/posts?category= {{ $post->category->slug }}" class="text-decoration-none biru-xerabutan pink-xerabutan-hover" >{{ $post->category->name }}</a>
                 </h4>
-                <h4><b>Rp{{ $post->harga }}</b></h4>
+                <h4 class="biru-xerabutan fw-normal"><b>{{ $post->harga }}</b></h4>
             </div>
             <div class="col align-self-center">
                 <a href="/transaksi/{{ $post->slug }}/create" class="float-end btn bg-biru-xerabutan text-white btn-bg-pink-hover fw-bolder p-2 px-3">Pesan Sekarang</a>
@@ -56,11 +56,18 @@
         <div class="row">
             <div class="col">
                 <h2>Share</h2>
+                <span>
+                    <a href="#!" class="btn btn-primary"><i class="bi bi-facebook"> Facebook</i></a>
+                    <a href="#!" class="btn btn-info text-white"><i class="bi bi-twitter"> Twitter</i></a>
+                    <a href="#!" class="btn btn-outline-primary"><i class="bi bi-linkedin"> Linkedin</i></a>
+                    <a href="#!" class="btn btn-outline-success"><i class="bi bi-whatsapp"> whatsapp</i></a>
+                </span>
+                
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-4">
             <div class="col">
-                <a href="/posts" class="border border-2 rounded text-decoration-none p-1 border-biru-xerabutan biru-xerabutan fw-semibold">< Back to Posts</a>
+                <a href="/posts" class="border rounded text-decoration-none p-2 bg-biru-xerabutan fw-semibold text-white btn-bg-pink-hover">< Back to Posts</a>
             </div>
         </div>
     </div>

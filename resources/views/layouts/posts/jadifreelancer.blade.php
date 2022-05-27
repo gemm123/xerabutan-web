@@ -1,8 +1,8 @@
 @extends('layouts.layouts.main')
 @section('template-dashboard')
-<h1>Jadi Freelancer</h1>
+<h1 class="m-4 biru-xerabutan">Jadi Freelancer</h1>
 
-<form action="/dashboard/jadifreelancer/{{ auth()->user()->id }}" method="post" class="biru-xerabutan" enctype="multipart/form-data">
+<form action="/dashboard/jadifreelancer/{{ auth()->user()->id }}" method="post" class="biru-xerabutan m-4" enctype="multipart/form-data">
     @method('put')
     @csrf
     {{-- <div class="form-floating mb-3">
