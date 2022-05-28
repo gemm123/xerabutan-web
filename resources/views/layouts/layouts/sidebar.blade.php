@@ -13,7 +13,7 @@
         
         <li class="list-group-item py-1">
             {{-- <a href="/dashboard-posts" class="text-decoration-none">My Posts</a> --}}
-            <a class="nav-link  biru-xerabutan fw-bold menu {{ Request::is('dashboard/transaksi*') ? 'pink-xerabutan' : '' }}" href="/dashboard/transaksi">Transaksi</a>
+            <a class="nav-link  biru-xerabutan fw-bold menu {{ Request::is('dashboard/transaksi*') ? 'pink-xerabutan' : '' }}" href="/dashboard/transaksi">Pesanan</a>
         </li>
         @endcan
         @cannot('admin')
@@ -23,7 +23,7 @@
         @endcannot
     </div>
 
-    @can('admin')
+    {{-- @can('admin')
     <h6 class="sidebar-heading d-flex justify-content-beetween align-items-center px-3 mt-4 mb-1 text-muted ">
         <span>Administrator</span>
     </h6>
@@ -34,7 +34,7 @@
             </a>
         </li>
     </ul>
-    @endcan
+    @endcan --}}
     
     </div>
 </nav>

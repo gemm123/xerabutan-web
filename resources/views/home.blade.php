@@ -131,15 +131,18 @@
       </div>
     </div>
   </div>  
-@endsection
-
-<script>
-       var botmanWidget = {
-              title: '💬 Xerabutan Chatbot',
-              introMessage: "✋ Halo! Aku chatbot Xerabutan!",
-              aboutText: 'Xerabutan Chatbot v1.0',
-              mainColor: 'white'
-       };
-       </script>
+  @endsection
+  
+  @auth
+  <script>
+    var botmanWidget = {
+      title: '💬 Xerabutan Chatbot',
+      introMessage: '✋ Halo! Aku chatbot Xerabutan! Aku akan membantumu mempelajari skill baru!',
+      aboutText: 'Xerabutan Chatbot v1.0',
+      mainColor: 'white'
+    };
+    
+      </script>
 
 <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+@endauth

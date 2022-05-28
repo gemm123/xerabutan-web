@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col m-4 mb-0">
-            <h1>Daftar Transaksi</h1>
+            <h1>Daftar Pesanan</h1>
         </div>
     </div>
     <div class="row">

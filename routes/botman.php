@@ -1,5 +1,7 @@
 <?php
 use App\Http\Controllers\BotManController;
+use BotMan\BotMan\Messages\Attachments\Image;
+use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 
 $botman = resolve('botman');
 
