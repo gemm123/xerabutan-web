@@ -22,7 +22,7 @@
                         {{ $message }}
                     </div>
                 @enderror
-                <label for="harga" class="form-label fw-bold" >Harga</label>
+                <label for="harga" class="form-label fw-bold mt-3" >Harga</label>
                 <input type="text" name="harga" id="dengan-rupiah" class="form-control @error('harga') is-invalid @enderror" required autofocus value="{{ old('harga') }}">
                 @error('harga')
                     <div class="invalid-feedback">
@@ -36,7 +36,7 @@
                         {{ $message }}
                     </div>
                 @enderror
-                <label for="category" class="form-label fw-bold">Category</label>
+                <label for="category" class="form-label fw-bold mt-3">Category</label>
                 <select class="form-select" name="category_id">
                     @foreach ($categories as $category)
                         @if(old('category_id'==$category->id))
@@ -46,15 +46,15 @@
                         @endif
                     @endforeach
                 </select>
-                <label for="image" class="form-label fw-bold">Upload Thumbnail</label>
+                <label for="image" class="form-label fw-bold mt-3">Upload Thumbnail</label>
                 <div class="input-group mb-3">
-                    <input type="file" class="form-control d-block @error('image') is-invalid @enderror" id="image" name="image" required onchange="previewImage()">
+                    <input type="file" class="form-control d-block @error('image') is-invalid @enderror" id="image" name="image" required onchange="previewImage()"><br>
                 </div>
                 <img class="image-preview" width="700">
                 @error('image')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
-                <label for="body" class="form-label fw-bold">Deskripsi</label>
+                <h2 class="biru-xerabutan fw-bold fs-5">Deskripsi</h2>
                 {{-- ERROR BODY MASI GA MUNCUL --}}
                 @error('body')
                     <p class="text-danger">{{ $message }}</p>

@@ -43,13 +43,64 @@
             {!! $post->body !!} 
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-3">
         <div class="col">
             <h2>Review</h2>
+            <div id="carouselExampleControls" class="carousel slide bg-light mx-4" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="border border-2 rounded">
+                        <h5 class="ms-5 biru-xerabutan mt-2">Lorem Ipsum</h5>
+                        <div class="ms-5 d-flex mb-2">
+                            <img class="me-2" src="/image/star.png" alt="" width="20" height="20">
+                            <p class="mb-0 text-dark">5.0</p>
+                        </div>
+                        <hr class="mx-5">
+                        <p class="mx-5 text-dark">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        </p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="border border-2 rounded">
+                        <h5 class="ms-5 biru-xerabutan mt-2">Lorem Ipsum</h5>
+                        <div class="ms-5 d-flex mb-2">
+                            <img class="me-2" src="/image/star.png" alt="" width="20" height="20">
+                            <p class="mb-0 text-dark">5.0</p>
+                        </div>
+                        <hr class="mx-5">
+                        <p class="mx-5 text-dark">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        </p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="border border-2 rounded">
+                        <h5 class="ms-5 biru-xerabutan mt-2">Lorem Ipsum</h5>
+                        <div class="ms-5 d-flex mb-2">
+                            <img class="me-2" src="/image/star.png" alt="" width="20" height="20">
+                            <p class="mb-0 text-dark">5.0</p>
+                        </div>
+                        <hr class="mx-5">
+                        <p class="mx-5 text-dark">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        </p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
         </div>
     </div>
     
-    <div class="row">
+    <div class="row mt-4">
         <div class="col">
             <a href="/dashboard/posts" class="btn bg-biru-xerabutan text-white">Back</a>
             <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn bg-pink-xerabutan text-white">Edit</a>
