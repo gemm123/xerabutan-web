@@ -50,7 +50,7 @@ class User extends Authenticatable
     }
     public function universities()
     {
-        return $this->hasMany(University::class, 'university_id');
+        return $this->belongsTo(University::class, 'university_id');
     }
     public function transaction()
     {

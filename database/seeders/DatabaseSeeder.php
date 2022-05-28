@@ -20,12 +20,21 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(10)->create();
         User::create([
+            'name' => 'freelancer',
+            'email' => 'freelancer@gmail.com',
+            'password' => bcrypt('12345678'),
+            'nomorhp' => '0812345678',
+            'is_admin' => '0',
+        ]);
+        User::create([
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('12345678'),
-            'nomorhp' => '082112341234',
+            'nomorhp' => '089876543',
+            'is_admin' => '1',
+            'university_id' => '1'
         ]);
-        
+
         Category::create([
             'name' => 'Programming',
             'slug' => 'programming',
@@ -38,6 +47,18 @@ class DatabaseSeeder extends Seeder
             'name' => 'Design',
             'slug' => 'design',
         ]);
+        Category::create([
+            'name' => 'Writing',
+            'slug' => 'writing',
+        ]);
+        Category::create([
+            'name' => 'Translation',
+            'slug' => 'translation',
+        ]);
+        Category::create([
+            'name' => 'Music',
+            'slug' => 'music',
+        ]);
         University::create([
             'name' => 'IPB University',
             'slug' => 'ipb',
@@ -49,6 +70,14 @@ class DatabaseSeeder extends Seeder
         University::create([
             'name' => 'Institut Teknologi Bandung',
             'slug' => 'itb',
+        ]);
+        University::create([
+            'name' => 'Universitas Brawijaya',
+            'slug' => 'ub',
+        ]);
+        University::create([
+            'name' => 'Institut Teknologi Sepuluh Nopember',
+            'slug' => 'its',
         ]);
         Post::factory(10)->create();
         

@@ -17,13 +17,13 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->sentence(mt_rand(2,6)),
+            'title' => $this->faker->sentence(mt_rand(3,6)),
             'slug' => $this->faker->slug(),
-            'harga' => '200000',
-            'category_id' => mt_rand(1,2),
-            'user_id' => mt_rand(1,4),
-            'university_id' => mt_rand(1,3),
-            'body' => $this->faker->paragraph(mt_rand(2,6))
+            'harga' => 'Rp.200000',
+            'category_id' => mt_rand(1,6),
+            'user_id' => mt_rand(1,10),
+            'university_id' => mt_rand(1,5),
+            'body' => $this->faker->paragraph(mt_rand(40,200))
         ];
     }
 }
